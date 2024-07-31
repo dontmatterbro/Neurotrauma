@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <infotexts language="Turkish" nowhitespace="false" translatedname="Türkçe">
+<!-- THIS MUST BE TRANSLATED FROM GROUND UP, IT IS MOSTLY OLD TRANLATIONS WITH SHITTY FORMATS -->
 
+  
 <!-- ITEMS -->
 
 <!-- /// Gear /// -->
@@ -170,118 +172,118 @@
 <entitydescription.antibloodloss2>Her kan grubuna verilebilir.</entitydescription.antibloodloss2>
 </Override>
 
-<entityname.ominuscard>Donor card O-</entityname.ominuscard>
-<entitydescription.ominuscard>Can take blood from: O-
-Can give blood to: all of them</entitydescription.ominuscard>
+<entityname.ominuscard>Kan Bağış Kartı O-</entityname.ominuscard>
+<entitydescription.ominuscard>Kan alabileceği gruplar: O-
+Kan verebileceği gruplar: all of them</entitydescription.ominuscard>
 
-<entityname.opluscard>Donor card O+</entityname.opluscard>
-<entitydescription.opluscard>Can take blood from: O-, O+
-Can give blood to: O+, A+, B+, AB+</entitydescription.opluscard>
+<entityname.opluscard>Kan Bağış Kartı O+</entityname.opluscard>
+<entitydescription.opluscard>Kan alabileceği gruplar: O-, O+
+Kan verebileceği gruplar: O+, A+, B+, AB+</entitydescription.opluscard>
 
-<entityname.aminuscard>Donor card A-</entityname.aminuscard>
-<entitydescription.aminuscard>Can take blood from: O-, A-
-Can give blood to: A-, A+, AB-, AB+</entitydescription.aminuscard>
+<entityname.aminuscard>Kan Bağış Kartı A-</entityname.aminuscard>
+<entitydescription.aminuscard>Kan alabileceği gruplar: O-, A-
+Kan verebileceği gruplar: A-, A+, AB-, AB+</entitydescription.aminuscard>
 
-<entityname.apluscard>Donor card A+</entityname.apluscard>
-<entitydescription.apluscard>Can take blood from: O-, O+, A-, A+
-Can give blood to: A+, AB+</entitydescription.apluscard>
+<entityname.apluscard>Kan Bağış Kartı A+</entityname.apluscard>
+<entitydescription.apluscard>Kan alabileceği gruplar: O-, O+, A-, A+
+Kan verebileceği gruplar: A+, AB+</entitydescription.apluscard>
 
-<entityname.bminuscard>Donor card B-</entityname.bminuscard>
-<entitydescription.bminuscard>Can take blood from: O-, B-
-Can give blood to: B-, B+, AB-, AB+</entitydescription.bminuscard>
+<entityname.bminuscard>Kan Bağış Kartı B-</entityname.bminuscard>
+<entitydescription.bminuscard>Kan alabileceği gruplar: O-, B-
+Kan verebileceği gruplar: B-, B+, AB-, AB+</entitydescription.bminuscard>
 
-<entityname.bpluscard>Donor card B+</entityname.bpluscard>
-<entitydescription.bpluscard>Can take blood from: O-, O+, B-, B+
-Can give blood to: B+, AB+</entitydescription.bpluscard>
+<entityname.bpluscard>Kan Bağış Kartı B+</entityname.bpluscard>
+<entitydescription.bpluscard>Kan alabileceği gruplar: O-, O+, B-, B+
+Kan verebileceği gruplar: B+, AB+</entitydescription.bpluscard>
 
-<entityname.abminuscard>Donor card AB-</entityname.abminuscard>
-<entitydescription.abminuscard>Can take blood from: O-, A-, B-, AB-
-Can give blood to: AB-, AB+</entitydescription.abminuscard>
+<entityname.abminuscard>Kan Bağış Kartı AB-</entityname.abminuscard>
+<entitydescription.abminuscard>Kan alabileceği gruplar: O-, A-, B-, AB-
+Kan verebileceği gruplar: AB-, AB+</entitydescription.abminuscard>
 
-<entityname.abpluscard>Donor card AB+</entityname.abpluscard>
-<entitydescription.abpluscard>Can take blood from: all of them
-Can give blood to: AB+</entitydescription.abpluscard>
+<entityname.abpluscard>Kan Bağış Kartı AB+</entityname.abpluscard>
+<entitydescription.abpluscard>Kan alabileceği gruplar: all of them
+Kan verebileceği gruplar: AB+</entitydescription.abpluscard>
 
 
 
 <!-- /// New containers /// -->
-<entityname.medtoolbox>Medical Container</entityname.medtoolbox> 
-<entitydescription.medtoolbox>Can store medicine and medical instruments</entitydescription.medtoolbox>
+<entityname.medtoolbox>Tıbbi Çanta</entityname.medtoolbox> 
+<entitydescription.medtoolbox>İlaç ve tıbbi eşyaları depolayabilir.</entitydescription.medtoolbox>
 
-<entityname.surgerytoolbox>Surgery Toolbox</entityname.surgerytoolbox> 
-<entitydescription.surgerytoolbox>Can store many small items that are used during surgery</entitydescription.surgerytoolbox>
+<entityname.surgerytoolbox>Ameliyat Çantası</entityname.surgerytoolbox> 
+<entitydescription.surgerytoolbox>Ameliyat sırasında kullanılan küçük aletleri depolayabilir.</entitydescription.surgerytoolbox>
 
-<entityname.organcrate>Refrigerated Crate</entityname.organcrate> 
-<entitydescription.organcrate>A place to store your precious transplant-ready organs</entitydescription.organcrate>
+<entityname.organcrate>Soğuk Çanta</entityname.organcrate> 
+<entitydescription.organcrate>Nakil için hazır organların depolanabileceği bir çanta.</entitydescription.organcrate>
 
-<entityname.organtoolbox>Refrigerated container</entityname.organtoolbox> 
-<entitydescription.organtoolbox>A place to store your precious transplant-ready organs</entitydescription.organtoolbox>
+<entityname.organtoolbox>Soğuk Kasa</entityname.organtoolbox> 
+<entitydescription.organtoolbox>Nakil için hazır organların depolanabileceği bir kasa.</entitydescription.organtoolbox>
 
-<entityname.bodybag>Body bag</entityname.bodybag>
-<entitydescription.bodybag>Lets you drag people faster.</entitydescription.bodybag>
+<entityname.bodybag>Kadavra Torbası</entityname.bodybag>
+<entitydescription.bodybag>İnsanları daha hızlı taşımanı sağlar.</entitydescription.bodybag>
 
-<entityname.stasisbag>Stasis Bag</entityname.stasisbag>
-<entitydescription.stasisbag>Çoğu biyolojik sürecin gerçekleşmesini durdurur.</entitydescription.stasisbag>
+<entityname.stasisbag>Biyo-engelleyici Çanta</entityname.stasisbag>
+<entitydescription.stasisbag>Vucüdu dondurarak biyolojik tepkimelerin gerçekleşmesini engeller.</entitydescription.stasisbag>
 
 
 
 <!-- /// Limbs and organs /// -->
-<entityname.rarm>Right arm</entityname.rarm>
-<entitydescription.rarm>A severed right arm. Can be surgically reattached.</entitydescription.rarm>
+<entityname.rarm>Sağ kol</entityname.rarm>
+<entitydescription.rarm>Kopmuş bir sağ kol. Ameliyatla tekrar bağlanabilir.</entitydescription.rarm>
 
 <entityname.larm>Left arm</entityname.larm>
-<entitydescription.larm>A severed left arm. Can be surgically reattached.</entitydescription.larm>
+<entitydescription.larm>Kopmuş bir sol kol. Ameliyatla tekrar bağlanabilir.</entitydescription.larm>
 
 <entityname.rleg>Right leg</entityname.rleg>
-<entitydescription.rleg>A severed right leg. Can be surgically reattached.</entitydescription.rleg>
+<entitydescription.rleg>Kopmuş bir sağ bacak. Ameliyatla tekrar bağlanabilir.</entitydescription.rleg>
 
 <entityname.lleg>Left leg</entityname.lleg>
-<entitydescription.lleg>A severed left leg. Can be surgically reattached.</entitydescription.lleg>
+<entitydescription.lleg>Kopmuş bir sol bacak. Ameliyatla tekrar bağlanabilir.</entitydescription.lleg>
 
-<entityname.rarmp>Right arm bionic prosthesis</entityname.rarmp>
-<entitydescription.rarmp>A bionic right arm. Can be used to treat amputation.</entitydescription.rarmp>
+<entityname.rarmp>Sağ kol biyonik protezi</entityname.rarmp>
+<entitydescription.rarmp>Biyonik sağ kol. Ampütasyonu tedavi etmekte kullanılabilir.</entitydescription.rarmp>
 
-<entityname.larmp>Left arm bionic prosthesis</entityname.larmp>
-<entitydescription.larmp>A bionic left arm. Can be used to treat amputation.</entitydescription.larmp>
+<entityname.larmp>Sol kol biyonik protezi</entityname.larmp>
+<entitydescription.larmp>Biyonik sol kol. Ampütasyonu tedavi etmekte kullanılabilir.</entitydescription.larmp>
 
-<entityname.rlegp>Right leg bionic prosthesis</entityname.rlegp>
-<entitydescription.rlegp>A bionic right leg. Can be used to treat amputation.</entitydescription.rlegp>
+<entityname.rlegp>Sağ bacak biyonik protezi</entityname.rlegp>
+<entitydescription.rlegp>Biyonik sağ bacak. Ampütasyonu tedavi etmekte kullanılabilir.</entitydescription.rlegp>
 
-<entityname.llegp>Left leg bionic prosthesis</entityname.llegp>
-<entitydescription.llegp>A bionic left leg. Can be used to treat amputation.</entitydescription.llegp>
+<entityname.llegp>Sol bacak biyonik protezi</entityname.llegp>
+<entitydescription.llegp>Biyonik sol bacak. Ampütasyonu tedavi etmekte kullanılabilir.</entitydescription.llegp>
 
-<entityname.livertransplant>Liver transplant</entityname.livertransplant>
-<entityname.livertransplant_q1>Liver transplant</entityname.livertransplant_q1>
-<entityname.livertransplant_q2>Liver transplant</entityname.livertransplant_q2>
-<entityname.livertransplant_q3>Liver transplant</entityname.livertransplant_q3>
-<entityname.livertransplant_q4>Liver transplant</entityname.livertransplant_q4>
-<entityname.livertransplant_q5>Liver transplant</entityname.livertransplant_q5>
+<entityname.livertransplant>Karaciğer</entityname.livertransplant>
+<entityname.livertransplant_q1>Karaciğer</entityname.livertransplant_q1>
+<entityname.livertransplant_q2>Karaciğer</entityname.livertransplant_q2>
+<entityname.livertransplant_q3>Karaciğer</entityname.livertransplant_q3>
+<entityname.livertransplant_q4>Karaciğer</entityname.livertransplant_q4>
+<entityname.livertransplant_q5>Karaciğer</entityname.livertransplant_q5>
 
-<entityname.lungtransplant>Lung transplant</entityname.lungtransplant>
-<entityname.lungtransplant_q1>Lung transplant</entityname.lungtransplant_q1>
-<entityname.lungtransplant_q2>Lung transplant</entityname.lungtransplant_q2>
-<entityname.lungtransplant_q3>Lung transplant</entityname.lungtransplant_q3>
-<entityname.lungtransplant_q4>Lung transplant</entityname.lungtransplant_q4>
-<entityname.lungtransplant_q5>Lung transplant</entityname.lungtransplant_q5>
+<entityname.lungtransplant>Akciğer</entityname.lungtransplant>
+<entityname.lungtransplant_q1>Akciğer</entityname.lungtransplant_q1>
+<entityname.lungtransplant_q2>Akciğer</entityname.lungtransplant_q2>
+<entityname.lungtransplant_q3>Akciğer</entityname.lungtransplant_q3>
+<entityname.lungtransplant_q4>Akciğer</entityname.lungtransplant_q4>
+<entityname.lungtransplant_q5>Akciğer</entityname.lungtransplant_q5>
 
-<entityname.kidneytransplant>Kidney transplant</entityname.kidneytransplant>
-<entityname.kidneytransplant_q1>Kidney transplant</entityname.kidneytransplant_q1>
-<entityname.kidneytransplant_q2>Kidney transplant</entityname.kidneytransplant_q2>
-<entityname.kidneytransplant_q3>Kidney transplant</entityname.kidneytransplant_q3>
-<entityname.kidneytransplant_q4>Kidney transplant</entityname.kidneytransplant_q4>
-<entityname.kidneytransplant_q5>Kidney transplant</entityname.kidneytransplant_q5>
+<entityname.kidneytransplant>Böbrek</entityname.kidneytransplant>
+<entityname.kidneytransplant_q1>Böbrek</entityname.kidneytransplant_q1>
+<entityname.kidneytransplant_q2>Böbrek</entityname.kidneytransplant_q2>
+<entityname.kidneytransplant_q3>Böbrek</entityname.kidneytransplant_q3>
+<entityname.kidneytransplant_q4>Böbrek</entityname.kidneytransplant_q4>
+<entityname.kidneytransplant_q5>Böbrek</entityname.kidneytransplant_q5>
 
-<entityname.hearttransplant>Heart transplant</entityname.hearttransplant>
-<entityname.hearttransplant_q1>Heart transplant</entityname.hearttransplant_q1>
-<entityname.hearttransplant_q2>Heart transplant</entityname.hearttransplant_q2>
-<entityname.hearttransplant_q3>Heart transplant</entityname.hearttransplant_q3>
-<entityname.hearttransplant_q4>Heart transplant</entityname.hearttransplant_q4>
-<entityname.hearttransplant_q5>Heart transplant</entityname.hearttransplant_q5>
+<entityname.hearttransplant>Kalp</entityname.hearttransplant>
+<entityname.hearttransplant_q1>Kalp</entityname.hearttransplant_q1>
+<entityname.hearttransplant_q2>Kalp</entityname.hearttransplant_q2>
+<entityname.hearttransplant_q3>Kalp</entityname.hearttransplant_q3>
+<entityname.hearttransplant_q4>Kalp</entityname.hearttransplant_q4>
+<entityname.hearttransplant_q5>Kalp</entityname.hearttransplant_q5>
 
-<entityname.braintransplant>Brain transplant</entityname.braintransplant>
+<entityname.braintransplant>Beyin</entityname.braintransplant>
 
-<entityname.armlock1>Non-working right hand</entityname.armlock1>
-<entityname.armlock2>Non-working left hand</entityname.armlock2>
+<entityname.armlock1>Çalışmayan sağ kol</entityname.armlock1>
+<entityname.armlock2>Çalışmayan sol kol</entityname.armlock2>
 
 
 <!-- AFFLICTIONS -->
