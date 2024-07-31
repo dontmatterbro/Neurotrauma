@@ -138,36 +138,36 @@
 <!--<entityname.bloodrefinery>Blood Refinery</entityname.bloodrefinery>-->
 <!-- <entitydescription.bloodrefinery></entitydescription.bloodrefinery> -->
 
-<entityname.emptybloodpack>Empty Blood Pack</entityname.emptybloodpack>
-<entitydescription.emptybloodpack>An empty blood pack for the drawing of blood.</entitydescription.emptybloodpack>
+<entityname.emptybloodpack>Boş Kan Paketi</entityname.emptybloodpack>
+<entitydescription.emptybloodpack>Kan almada kullanılan boş bir torba.</entitydescription.emptybloodpack>
 
-<entityname.bloodpackoplus>Blood Pack O+</entityname.bloodpackoplus>
-<entitydescription.bloodpackoplus>Administerable to: O+, A+, B+, AB+</entitydescription.bloodpackoplus>
+<entityname.bloodpackoplus>Kan Paketi O+</entityname.bloodpackoplus>
+<entitydescription.bloodpackoplus>Verilebileceği gruplar: O+, A+, B+, AB+</entitydescription.bloodpackoplus>
 
-<entityname.bloodpackominus>Blood Pack O-</entityname.bloodpackominus>
-<entitydescription.bloodpackominus>A blood pack that can be used on any patient.</entitydescription.bloodpackominus>
+<entityname.bloodpackominus>Kan Paketi O-</entityname.bloodpackominus>
+<entitydescription.bloodpackominus>Her kan grubuna verilebilir.</entitydescription.bloodpackominus>
 
-<entityname.bloodpackaplus>Blood Pack A+</entityname.bloodpackaplus>
-<entitydescription.bloodpackaplus>Administerable to: A+, AB+</entitydescription.bloodpackaplus>
+<entityname.bloodpackaplus>Kan Paketi A+</entityname.bloodpackaplus>
+<entitydescription.bloodpackaplus>Verilebileceği gruplar: A+, AB+</entitydescription.bloodpackaplus>
 
-<entityname.bloodpackbplus>Blood Pack B+</entityname.bloodpackbplus>
-<entitydescription.bloodpackbplus>Administerable to: B+, AB+</entitydescription.bloodpackbplus>
+<entityname.bloodpackbplus>Kan Paketi B+</entityname.bloodpackbplus>
+<entitydescription.bloodpackbplus>Verilebileceği gruplar: B+, AB+</entitydescription.bloodpackbplus>
 
-<entityname.bloodpackabplus>Blood Pack AB+</entityname.bloodpackabplus>
-<entitydescription.bloodpackabplus>Administerable to: AB+</entitydescription.bloodpackabplus>
+<entityname.bloodpackabplus>Kan Paketi AB+</entityname.bloodpackabplus>
+<entitydescription.bloodpackabplus>Verilebileceği gruplar: AB+</entitydescription.bloodpackabplus>
 
-<entityname.bloodpackaminus>Blood Pack A-</entityname.bloodpackaminus>
-<entitydescription.bloodpackaminus>Administerable to: A-, A+, AB-, AB+</entitydescription.bloodpackaminus>
+<entityname.bloodpackaminus>Kan Paketi A-</entityname.bloodpackaminus>
+<entitydescription.bloodpackaminus>Verilebileceği gruplar: A-, A+, AB-, AB+</entitydescription.bloodpackaminus>
 
-<entityname.bloodpackbminus>Blood Pack B-</entityname.bloodpackbminus>
-<entitydescription.bloodpackbminus>Administerable to: B-, B+, AB-, AB+</entitydescription.bloodpackbminus>
+<entityname.bloodpackbminus>Kan Paketi B-</entityname.bloodpackbminus>
+<entitydescription.bloodpackbminus>Verilebileceği gruplar: B-, B+, AB-, AB+</entitydescription.bloodpackbminus>
 
-<entityname.bloodpackabminus>Blood Pack AB-</entityname.bloodpackabminus>
-<entitydescription.bloodpackabminus>Administerable to: AB-, AB+</entitydescription.bloodpackabminus>
+<entityname.bloodpackabminus>Kan Paketi AB-</entityname.bloodpackabminus>
+<entitydescription.bloodpackabminus>Verilebileceği gruplar: AB-, AB+</entitydescription.bloodpackabminus>
 
 <Override>
-<entityname.antibloodloss2>Blood Pack O-</entityname.antibloodloss2>
-<entitydescription.antibloodloss2>A blood pack that can be used on any patient.</entitydescription.antibloodloss2>
+<entityname.antibloodloss2>Kan Paketi O-</entityname.antibloodloss2>
+<entitydescription.antibloodloss2>Her kan grubuna verilebilir.</entitydescription.antibloodloss2>
 </Override>
 
 <entityname.ominuscard>Donor card O-</entityname.ominuscard>
