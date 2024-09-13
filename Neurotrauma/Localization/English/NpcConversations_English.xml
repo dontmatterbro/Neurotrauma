@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Conversations identifier="neurotraumaconversations" Language="English" nowhitespace="False">
+
+
+<Conversation line="I'm burnt." speaker="0" flags="1stburn"/>
+<Conversation line="I'm burnt bad." speaker="0" flags="2ndburn"/>
+<Conversation line="I'm really burnt, it hurts." speaker="0" flags="3rdburn"/>
+
+
+<Conversation line="What are you doing to me? This is inhumane!" speaker="0" flags="traumaticshock"/> 
+<Conversation line="Stop, please, it hurts!" speaker="0" flags="traumaticshock"/>
+<Conversation line="Please stop, I don't feel good!" speaker="0" flags="traumaticshock"/>
+
+
+<Conversation line="I think my leg got dislocated." speaker="0" flags="legdislocation"/>
+
+
+<Conversation line="I think my arm got dislocated." speaker="0" flags="armdislocation"/>
+
+
+<Conversation line="I think I broke my skull." speaker="0" flags="skullfracture"/>
+<Conversation line="My head just cracked." speaker="0" flags="skullfracture"/>
+
+
+<Conversation line="Ah! My neck!" speaker="0" flags="neckfracture"/>
+<Conversation line="My neck, I think it's broken!" speaker="0" flags="neckfracture"/>
+
+
+<Conversation line="Ahh, I broke my arm!" speaker="0" flags="armfracture"/>
+
+
+<Conversation line="Ahh, I broke my leg!" speaker="0" flags="legfracture"/>
+
+
+<Conversation line="Why is my skin turning dark?" speaker="0" flags="gangrene"/>
+<Conversation line="My skin looks weird." speaker="0" flags="gangrene"/>
+<Conversation line="Is that gangrene?!" speaker="0" flags="gangrene"/>
+
+
+<Conversation line="My chest hurts." speaker="0" flags="chestpain"/>
+<Conversation line="Is something wrong with my chest? It hurts." speaker="0" flags="chestpain"/>
+
+
+<Conversation line="Why do I keep vomiting?" speaker="0" flags="vomit"/>
+<Conversation line="I think I ate something spoiled." speaker="0" flags="vomit"/>
+
+
+<Conversation line="Ahh, my stomach hurts real bad!" speaker="0" flags="abdominalpain"/>
+
+
+<Conversation line="I am bleeding like crazy!" speaker="0" flags="arterialrupture"/>
+<Conversation line="What the hell is that bleed!" speaker="0" flags="arterialrupture"/>
+
+<Conversation line="AAAAAAAAAAAAAA!" speaker="0" flags="aorticrupture"/>
+<Conversation line="HEEEEEEELPPPP!" speaker="0" flags="aorticrupture"/>
+
+
+<Conversation line="Aaahhhhhh!" speaker="0" flags="heartattack"/>
+<Conversation line="My heart... hurts..." speaker="0" flags="heartattack"/>
+
+
+<Conversation line="Ah, my head!" speaker="0" flags="concussion"/>
+
+
+<Conversation line="I need air!" speaker="0" flags="oxygenlow"/>
+<Conversation line="I need oxygen!" speaker="0" flags="oxygenlow"/>
+<Conversation line="Oxygen, NOW!" speaker="0" flags="oxygenlow"/>
+
+
+<Conversation line="What the hell?" speaker="0" flags="spasms"/>
+<Conversation line="What is happening to my muscles?" speaker="0" flags="spasms"/>
+
+
+<Conversation line="My heart feels weird." speaker="0" flags="palpitations"/>
+<Conversation line="Why is my heart beating that loud?" speaker="0" flags="palpitations"/>
+
+
+<Conversation line="I need some stuff man." speaker="0" flags="craving"/>
+<Conversation line="Where is all the dope?" speaker="0" flags="craving"/>
+<Conversation line="Do we have any fentanyl left?" speaker="0" flags="craving"/>
+<Conversation line="Where the hell is the booze?" speaker="0" flags="craving"/>
+
+
+<Conversation line="My head is killing me." speaker="0" flags="headache"/>
+<Conversation line="I have the worst headache." speaker="0" flags="headache"/>
+<Conversation line="Can you quiet down, my head hurts." speaker="0" flags="headache"/>
+
+
+<Conversation line="Ah is that an infection!?" speaker="0" flags="inflammation"/>
+<Conversation line="I think I am infected." speaker="0" flags="inflammation"/>
+<Conversation line="That smarts." speaker="0" flags="inflammation"/>
+
+
+<Conversation line="My stomach hurts bad." speaker="0" flags="abdominaldiscomfort"/>
+<Conversation line="Ouch! My stomach." speaker="0" flags="abdominaldiscomfort"/>
+
+<Conversation line="I think I need pass some gas." speaker="0" flags="bloating"/>
+<Conversation line="My stomach hurts but I can't fart." speaker="0" flags="bloating"/>
+
+<Conversation line="Vicodin has finally shot my liver." speaker="0" flags="jaundice"/>
+<Conversation line="Why am I yellow?" speaker="0" flags="jaundice"/>
+<Conversation line="I look yellow." speaker="0" flags="jaundice"/>
+
+
+<Conversation line="I'm sweating really bad." speaker="0" flags="sweating"/>
+<Conversation line="I'm sweating a lot." speaker="0" flags="sweating"/>
+<Conversation line="What is all this sweat?." speaker="0" flags="sweating"/>
+
+
+<Conversation line="I have a fever." speaker="0" flags="fever"/>
+<Conversation line="I think I have a fever." speaker="0" flags="fever"/>
+<Conversation line="Am I infected? I think I have a fever." speaker="0" flags="fever"/>
+<Conversation line="I am shaking." speaker="0" flags="fever"/>
+
+
+<Conversation line="My arm feels weak." speaker="0" flags="weakness"/>
+<Conversation line="I can't raise my right arm." speaker="0" flags="weakness"/>
+<Conversation line="Something is wrong with my arm." speaker="0" flags="weakness"/>
+
+
+<Conversation line="I sound like a whistle." speaker="0" flags="wheezing"/>
+<Conversation line="I'm wheezing for some reason." speaker="0" flags="wheezing"/>
+
+
+<Conversation line="My leg is stiff." speaker="0" flags="legswelling"/>
+<Conversation line="I think my leg is swelling." speaker="0" flags="legswelling"/>
+<Conversation line="My leg fells weird." speaker="0" flags="legswelling"/>
+
+
+<Conversation line="I can't see properly." speaker="0" flags="blurryvision"/>
+<Conversation line="Why is everything blurry?." speaker="0" flags="blurryvision"/>
+
+
+<Conversation line="I'm feeling faint." speaker="0" flags="lightheadedness"/>
+<Conversation line="I'm really lightheaded." speaker="0" flags="lightheadedness"/>
+<Conversation line="I'm seeing stars." speaker="0" flags="lightheadedness"/>
+
+
+<Conversation line="I can't focus." speaker="0" flags="confusion"/>
+<Conversation line="What is happening?." speaker="0" flags="confusion"/>
+<Conversation line="Where am I?." speaker="0" flags="confusion"/>
+<Conversation line="Why am I?." speaker="0" flags="confusion"/>
+<Conversation line="How is it and why?." speaker="0" flags="confusion"/>
+
+
+<Conversation line="My heart is beating like crazy!" speaker="0" flags="irregularheartbeat"/>
+<Conversation line="Why is my heart beating so fast?" speaker="0" flags="irregularheartbeat"/>
+<Conversation line="Something is wrong with my heart." speaker="0" flags="irregularheartbeat"/>
+
+
+<Conversation line="I keep coughing." speaker="0" flags="cough"/>
+<Conversation line="This cough is annoying." speaker="0" flags="cough"/>
+
+
+<Conversation line="I can hardly breath." speaker="0" flags="shortnessofbreath"/>
+<Conversation line="I'm not breathing well." speaker="0" flags="shortnessofbreath"/>
+
+
+<Conversation line="I just vomited blood!" speaker="0" flags="vomitblood"/>
+<Conversation line="I'm vomiting blood." speaker="0" flags="vomitblood"/>
+<Conversation line="Oh god, why did I vomit blood?." speaker="0" flags="vomitblood"/>
+
+
+<Conversation line="Why is my skin pale?." speaker="0" flags="paleskin"/>
+<Conversation line="I look paler than usual." speaker="0" flags="paleskin"/>
+
+
+<Conversation line="I think I need some blood." speaker="0" flags="bloodloss"/>
+<Conversation line="I'm feeling cold." speaker="0" flags="bloodloss"/>
+
+</Conversations>
