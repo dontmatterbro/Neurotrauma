@@ -27,9 +27,11 @@
 
 
 <Conversation line="Ahh, I broke my arm!" speaker="0" flags="armfracture"/>
+<Conversation line="My arm just cracked." speaker="0" flags="armfracture"/>
 
 
 <Conversation line="Ahh, I broke my leg!" speaker="0" flags="legfracture"/>
+<Conversation line="My leg just cracked." speaker="0" flags="legfracture"/>
 
 
 <Conversation line="Why is my skin turning dark?" speaker="0" flags="gangrene"/>
@@ -86,8 +88,8 @@
 <Conversation line="Can you quiet down, my head hurts." speaker="0" flags="headache"/>
 
 
-<Conversation line="Ah is that an infection!?" speaker="0" flags="inflammation"/>
-<Conversation line="I think I am infected." speaker="0" flags="inflammation"/>
+<Conversation line="Ah, is that an infection!?" speaker="0" flags="inflammation"/>
+<Conversation line="I think I have an infection." speaker="0" flags="inflammation"/>
 <Conversation line="That smarts." speaker="0" flags="inflammation"/>
 
 
@@ -137,10 +139,10 @@
 
 
 <Conversation line="I can't focus." speaker="0" flags="confusion"/>
-<Conversation line="What is happening?." speaker="0" flags="confusion"/>
-<Conversation line="Where am I?." speaker="0" flags="confusion"/>
-<Conversation line="Why am I?." speaker="0" flags="confusion"/>
-<Conversation line="How is it and why?." speaker="0" flags="confusion"/>
+<Conversation line="What is happening?" speaker="0" flags="confusion"/>
+<Conversation line="Where am I?" speaker="0" flags="confusion"/>
+<Conversation line="Why am I?" speaker="0" flags="confusion"/>
+<Conversation line="How is it?" speaker="0" flags="confusion"/>
 
 
 <Conversation line="My heart is beating like crazy!" speaker="0" flags="irregularheartbeat"/>
@@ -169,3 +171,4 @@
 <Conversation line="I'm feeling cold." speaker="0" flags="bloodloss"/>
 
 </Conversations>
+

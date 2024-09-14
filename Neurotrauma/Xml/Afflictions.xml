@@ -58,9 +58,8 @@
     type="gaze"
     isbuff="false"
     healableinmedicalclinic="false"
-    iconcolors="255,90,0,255;255,90,0,255"
-	dialogflag="irregularheartbeat">
-	
+    iconcolors="255,90,0,255;255,90,0,255">
+	<Effect minstrength="15" maxstrength="100" dialogflag="irregularheartbeat"/>
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="1,1" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
 
@@ -118,8 +117,9 @@
     showinhealthscannerthreshold="1"
     type="gaze"
     isbuff="false"
-    damageoverlayalpha="0"
-	dialogflag="heartattack">
+    damageoverlayalpha="0">
+	
+	<Effect minstrength="0" maxstrength="100" dialogflag="heartattack"/>
 	
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0"/>
   </Affliction>
@@ -426,8 +426,8 @@
     showinhealthscannerthreshold="100"
     showiconthreshold="1"
     maxstrength="2"
-    iconcolors="255,90,0,255;255,90,0,255"
-	dialogflag="shortnessofbreath">
+    iconcolors="255,90,0,255;255,90,0,255">
+	<Effect minstrength="0" maxstrength="2" dialogflag="shortnessofbreath"/>
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,0" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
 
@@ -1121,8 +1121,7 @@
     type="fractures"
     showinhealthscannerthreshold="5"
     showiconthreshold="90"
-    maxstrength="100"
-	dialogflag="legfracture">
+    maxstrength="100">
     
     <Effect minstrength="0" maxstrength="6">
       <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" targetlimb="RightLeg">
@@ -1134,7 +1133,7 @@
         <Affliction identifier="severepain" amount="1" />
       </StatusEffect>
     </Effect>
-    <Effect minstrength="6" maxstrength="100"/>
+    <Effect minstrength="6" maxstrength="100" dialogflag="legfracture"/>
 
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
@@ -1149,8 +1148,7 @@
     type="fractures"
     showinhealthscannerthreshold="5"
     showiconthreshold="90"
-    maxstrength="100"
-	dialogflag="legfracture">
+    maxstrength="100">
 	
     <Effect minstrength="0" maxstrength="6">
       <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" targetlimb="LeftLeg">
@@ -1162,7 +1160,7 @@
         <Affliction identifier="severepain" amount="1" />
       </StatusEffect>
     </Effect>
-    <Effect minstrength="6" maxstrength="100"/>
+    <Effect minstrength="6" maxstrength="100" dialogflag="legfracture"/>
 
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
@@ -1210,8 +1208,7 @@
     type="fractures"
     showinhealthscannerthreshold="5"
     showiconthreshold="90"
-    maxstrength="100"
-	dialogflag="neckfracture">
+    maxstrength="100">
 	
     <Effect minstrength="0" maxstrength="6">
       <StatusEffect target="Character">
@@ -1221,7 +1218,7 @@
         <sound file="%ModDir%/Sound/bonebreak1.ogg"/>
       </StatusEffect>
     </Effect>
-    <Effect minstrength="6" maxstrength="100"/>
+    <Effect minstrength="6" maxstrength="100" dialogflag="neckfracture"/>
 
     <PeriodicEffect mininterval="1" maxinterval="1">
       <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" targetlimb="Head" disabledeltatime="true">
@@ -1248,8 +1245,7 @@
     type="fractures"
     showinhealthscannerthreshold="5"
     showiconthreshold="90"
-    maxstrength="100"
-	dialogflag="skullfracture">
+    maxstrength="100">
 	
     <Effect minstrength="0" maxstrength="6">
       <StatusEffect target="Character">
@@ -1259,7 +1255,7 @@
         <sound file="%ModDir%/Sound/bonebreak1.ogg"/>
       </StatusEffect>
     </Effect>
-    <Effect minstrength="6" maxstrength="100"/>
+    <Effect minstrength="6" maxstrength="100" dialogflag="skullfracture"/>
 
     <PeriodicEffect mininterval="30" maxinterval="60">
       <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" comparison="And">
@@ -1282,8 +1278,7 @@
     type="fractures"
     showinhealthscannerthreshold="5"
     showiconthreshold="30"
-    maxstrength="100"
-	dialogflag="legdislocation">
+    maxstrength="100">
 	
     <Effect minstrength="0" maxstrength="6" strengthchange="10">
       <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true">
@@ -1294,7 +1289,7 @@
         <Affliction identifier="severepain" amount="1" />
       </StatusEffect>
     </Effect>
-    <Effect minstrength="6" maxstrength="100" strengthchange="1.5"/>
+    <Effect minstrength="6" maxstrength="100" strengthchange="1.5" dialogflag="legdislocation"/>
 
     <PeriodicEffect mininterval="1" maxinterval="1">
       <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
@@ -1316,8 +1311,7 @@
     type="fractures"
     showinhealthscannerthreshold="5"
     showiconthreshold="30"
-    maxstrength="100"
-	dialogflag="legdislocation">
+    maxstrength="100">
 	
     <Effect minstrength="0" maxstrength="6" strengthchange="10">
       <StatusEffect target="Character">
@@ -1328,7 +1322,7 @@
         <Affliction identifier="severepain" amount="1" />
       </StatusEffect>
     </Effect>
-    <Effect minstrength="6" maxstrength="100" strengthchange="1.5"/>
+    <Effect minstrength="6" maxstrength="100" strengthchange="1.5" dialogflag="legdislocation"/>
 
     <PeriodicEffect mininterval="1" maxinterval="1">
       <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
@@ -1350,8 +1344,7 @@
     type="fractures"
     showinhealthscannerthreshold="5"
     showiconthreshold="30"
-    maxstrength="100"
-	dialogflag="armdislocation">
+    maxstrength="100">
 	
     <Effect minstrength="0" maxstrength="6" strengthchange="1.5">
       <StatusEffect target="Character">
@@ -1361,7 +1354,7 @@
         <sound file="%ModDir%/Sound/bonebreak1.ogg"/>
       </StatusEffect>
     </Effect>
-    <Effect minstrength="6" maxstrength="100" strengthchange="1.5"/>
+    <Effect minstrength="6" maxstrength="100" strengthchange="1.5" dialogflag="armdislocation"/>
 
     <PeriodicEffect mininterval="1" maxinterval="1">
       <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
@@ -1382,8 +1375,7 @@
     type="fractures"
     showinhealthscannerthreshold="5"
     showiconthreshold="30"
-    maxstrength="100"
-	dialogflag="armdislocation">
+    maxstrength="100">
 	
     <Effect minstrength="0" maxstrength="6" strengthchange="1.5">
       <StatusEffect target="Character">
@@ -1393,7 +1385,7 @@
         <sound file="%ModDir%/Sound/bonebreak1.ogg"/>
       </StatusEffect>
     </Effect>
-    <Effect minstrength="6" maxstrength="100" strengthchange="1.5"/>
+    <Effect minstrength="6" maxstrength="100" strengthchange="1.5" dialogflag="armdislocation"/>
 
     <PeriodicEffect mininterval="1" maxinterval="1">
       <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
@@ -1414,9 +1406,8 @@
     type="arterialcut"
     limbspecific="false"
     indicatorlimb="LeftLeg"
-    maxstrength="100"
-	dialogflag="arterialrupture">
-    <Effect minstrength="0" maxstrength="100" strengthchange="1" >
+    maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="1" dialogflag="arterialrupture">
       <StatusEffect target="Character" targetlimb="LeftLeg" comparison="and">
         <Conditional arteriesclamp="lte 1"/>
         <Conditional bloodloss="lte 99.5"/>
@@ -1446,9 +1437,8 @@
     type="arterialcut"
     limbspecific="false"
     indicatorlimb="RightLeg"
-    maxstrength="100"
-	dialogflag="arterialrupture">
-    <Effect minstrength="0" maxstrength="100" strengthchange="1" >
+    maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="1" dialogflag="arterialrupture">
       <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true"  targetlimb="RightLeg" comparison="and">
         <Conditional arteriesclamp="lte 1"/>
         <Conditional bloodloss="lte 99.5"/>
@@ -1479,9 +1469,8 @@
     type="arterialcut"
     limbspecific="false"
     indicatorlimb="LeftArm"
-    maxstrength="100"
-	dialogflag="arterialrupture">
-    <Effect minstrength="0" maxstrength="100" strengthchange="1" >
+    maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="1" dialogflag="arterialrupture">
       <StatusEffect target="Character" targetlimb="LeftArm" comparison="and">
         <Conditional arteriesclamp="lte 1"/>
         <Conditional bloodloss="lte 99.5"/>
@@ -1511,9 +1500,8 @@
     type="arterialcut"
     limbspecific="false"
     indicatorlimb="RightArm"
-    maxstrength="100"
-	dialogflag="arterialrupture">
-    <Effect minstrength="0" maxstrength="100" strengthchange="1" >
+    maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="1" dialogflag="arterialrupture">
       <StatusEffect target="Character" targetlimb="RightArm" comparison="and">
         <Conditional arteriesclamp="lte 1"/>
         <Conditional bloodloss="lte 99.5"/>
@@ -1547,7 +1535,7 @@
     showiconthreshold="200"
     showinhealthscannerthreshold="1"
     maxstrength="100"> 
-    <Effect minstrength="0" maxstrength="100" strengthchange="1" />
+    <Effect minstrength="0" maxstrength="100" strengthchange="1" dialogflag="arterialrupture"/>
 
     <PeriodicEffect mininterval="1" maxinterval="3">
       <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
@@ -1572,9 +1560,8 @@
     type="arterialcut"
     limbspecific="false"
     indicatorlimb="Head"
-    maxstrength="100"
-	dialogflag="aorticrupture">
-    <Effect minstrength="0" maxstrength="100" strengthchange="100" >
+    maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="100" dialogflag="aorticrupture">
       <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true"  targetlimb="Head" comparison="and">
         <Conditional bloodloss="lte 99.5"/>
         <ParticleEmitter particle="bloodsplash" particlespersecond="50" scalemin="0.5" scalemax="0.45" velocitymin="0" velocitymax="40" anglemin="0" anglemax="360" />
@@ -1665,14 +1652,14 @@
     showinhealthscannerthreshold="1"
     showiconthreshold="15"
     maxstrength="100"
-    iconcolors="200,0,0,255;200,0,0,255;200,0,0,255"
-	dialogflag="gangrene">
+    iconcolors="200,0,0,255;200,0,0,255;200,0,0,255">
     <Effect minstrength="15" maxstrength="50"
       minvitalitydecrease="0"
       maxvitalitydecrease="15"/>
     <Effect minstrength="50" maxstrength="100"
       minvitalitydecrease="15"
-      maxvitalitydecrease="25"/>
+      maxvitalitydecrease="25"
+	  dialogflag="gangrene"/>
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,3" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
 
@@ -2620,8 +2607,7 @@
     showiconthreshold="1"
     showinhealthscannerthreshold="100"
     maxstrength="2"
-    iconcolors="255,90,0,255;255,90,0,255"
-	dialogflag="cough">
+    iconcolors="255,90,0,255;255,90,0,255">
 	
     <PeriodicEffect mininterval="12" maxinterval="26">
       <StatusEffect target="Character" comparison="and">
@@ -2645,7 +2631,8 @@
         <Sound file="%ModDir%/Sound/Voice/female_cough6.ogg" />
       </StatusEffect>
     </PeriodicEffect>
-
+	<Effect minstrength="0" maxstrength="2" dialogflag="cough"/>
+	
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="7,0" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
 
@@ -2662,13 +2649,13 @@
     showiconthreshold="1"
     showinhealthscannerthreshold="100"
     maxstrength="2"
-    iconcolors="200,195,195,255;200,195,195,255"
-	dialogflag="paleskin">
+    iconcolors="200,195,195,255;200,195,195,255">
 	
     <Effect minstrength="0" maxstrength="2"
       maxvitalitydecrease="0"
       minbodytint="255,255,255,0"
-      maxbodytint="255,255,255,200"/>
+      maxbodytint="255,255,255,200"
+	  dialogflag="paleskin"/>
     
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,0" sheetelementsize="128,128" color="255,255,255,255" origin="0,0"/>
   </Affliction>
@@ -2708,10 +2695,9 @@
     showinhealthscannerthreshold="100"
     maxstrength="2"
     grainburst="3"
-    iconcolors="255,90,0,255;255,90,0,255"
-	dialogflag="lightheadedness">
+    iconcolors="255,90,0,255;255,90,0,255">
 	
-    <Effect minstrength="0" maxstrength="2" mingrainstrength="0.5" maxgrainstrength="0.25"/>
+    <Effect minstrength="0" maxstrength="2" mingrainstrength="0.5" maxgrainstrength="0.25" dialogflag="lightheadedness"/>
     <icon texture="%ModDir%/Images/AfflictionIcons2.png" sheetindex="0,0" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
 
@@ -2728,12 +2714,12 @@
     showiconthreshold="1"
     showinhealthscannerthreshold="100"
     maxstrength="2"
-    iconcolors="255,90,0,255;255,90,0,255"
-	dialogflag="blurryvision">
+    iconcolors="255,90,0,255;255,90,0,255">
 	
     <Effect minstrength="0" maxstrength="2"
       minscreenblur="0.0"
-      maxscreenblur="1.0"/>
+      maxscreenblur="1.0"
+	  dialogflag="blurryvision"/>
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,1" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
 
@@ -2750,14 +2736,14 @@
     showiconthreshold="1"
     showinhealthscannerthreshold="100"
     maxstrength="2"
-    iconcolors="255,90,0,255;255,90,0,255"
-	dialogflag="confusion">
+    iconcolors="255,90,0,255;255,90,0,255">
 	
-    <Effect minstrength="0" maxstrength="2"
+    <Effect minstrength="0" maxstrength="2" 
       minscreendistort="0.0"
       maxscreendistort="0.5"
       minradialdistort="0.0"
-      maxradialdistort="0.5"/>
+      maxradialdistort="0.5"
+	  dialogflag="confusion"/>
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,1" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
 
@@ -2775,8 +2761,7 @@
     showinhealthscannerthreshold="100"
     maxstrength="2"
     grainburst="3"
-    iconcolors="255,90,0,255;255,90,0,255"
-	dialogflag="headache">
+    iconcolors="255,90,0,255;255,90,0,255">
 	
     <Effect minstrength="0" maxstrength="2"
       minscreendistort="0.0"
@@ -2784,7 +2769,8 @@
       minradialdistort="0.0"
       maxradialdistort="0.5"
       mingrainstrength="0.0"
-      maxgrainstrength="0.5"/>
+      maxgrainstrength="0.5"
+	  dialogflag="headache"/>
     <icon texture="%ModDir%/Images/AfflictionIcons2.png" sheetindex="1,0" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
 
@@ -2801,10 +2787,9 @@
     showiconthreshold="1"
     showinhealthscannerthreshold="100"
     maxstrength="2"
-    iconcolors="255,90,0,255;255,90,0,255"
-	dialogflag="legswelling">
+    iconcolors="255,90,0,255;255,90,0,255">
 	
-    <Effect minstrength="0" maxstrength="2"/>
+    <Effect minstrength="0" maxstrength="2" dialogflag="legswelling"/>
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,1" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
   
@@ -2821,10 +2806,9 @@
     showiconthreshold="1"
     showinhealthscannerthreshold="100"
     maxstrength="2"
-    iconcolors="255,90,0,255;255,90,0,255"
-	dialogflag="weakness">
+    iconcolors="255,90,0,255;255,90,0,255">
 	
-    <Effect minstrength="0" maxstrength="2">
+    <Effect minstrength="0" maxstrength="2" dialogflag="weakness">
       <StatValue stattype="MeleeAttackMultiplier" minvalue="-0.8" maxvalue="-0.8" />
     </Effect>
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="5,1" sheetelementsize="128,128" origin="0,0"/>
@@ -2843,11 +2827,10 @@
     showiconthreshold="1"
     showinhealthscannerthreshold="100"
     maxstrength="2"
-    iconcolors="255,90,0,255;255,90,0,255"
-	dialogflag="wheezing">
+    iconcolors="255,90,0,255;255,90,0,255">
 	
     <!--TODO: add wheezing sound-->
-    <Effect minstrength="0" maxstrength="2"/>
+    <Effect minstrength="0" maxstrength="2" dialogflag="wheezing"/>
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,1" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
 
@@ -2868,13 +2851,13 @@
     healcostmultiplier="2.25"
     showiconthreshold="1"
     showinhealthscannerthreshold="100"
-    iconcolors="255,90,0,255;255,90,0,255"
-	dialogflag="vomit">
+    iconcolors="255,90,0,255;255,90,0,255">
 	
     <Effect minstrength="0" maxstrength="1"/>
     <Effect minstrength="1" maxstrength="2"
       minfacetint="255,255,255,0"
-      maxfacetint="255,255,255,100">
+      maxfacetint="255,255,255,100"
+	  dialogflag="vomit">
     </Effect>
 
     <PeriodicEffect mininterval="12" maxinterval="16">
@@ -2925,10 +2908,9 @@
     damageoverlayalpha="0"
     healcostmultiplier="2.25"
     showiconthreshold="1"
-    showinhealthscannerthreshold="100"
-	dialogflag="vomitblood">
+    showinhealthscannerthreshold="100">
 	
-    <Effect minstrength="0" maxstrength="2"/>
+    <Effect minstrength="0" maxstrength="2" dialogflag="vomitblood"/>
 
     <PeriodicEffect mininterval="8" maxinterval="16">
       <StatusEffect target="Character" SpeedMultiplier="0.0" setvalue="true" duration="1.7" />
@@ -2976,8 +2958,9 @@
     showiconthreshold="1"
     showinhealthscannerthreshold="100"
     maxstrength="2"
-    iconcolors="255,90,0,255;255,90,0,255"
-	dialogflag="fever">
+    iconcolors="255,90,0,255;255,90,0,255">
+	
+	<Effect minstrength="0" maxstrength="2" dialogflag="fever"/>
 	
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,2" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
@@ -2995,8 +2978,9 @@
     showiconthreshold="1"
     showinhealthscannerthreshold="100"
     maxstrength="2"
-    iconcolors="255,90,0,255;255,90,0,255"
-	dialogflag="abdominaldiscomfort">
+    iconcolors="255,90,0,255;255,90,0,255">
+	
+	<Effect minstrength="0" maxstrength="2" dialogflag="abdominaldiscomfort"/>
 	
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="1,2" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
@@ -3014,8 +2998,9 @@
     showiconthreshold="1"
     showinhealthscannerthreshold="100"
     maxstrength="2"
-    iconcolors="255,90,0,255;255,90,0,255"
-	dialogflag="bloating">
+    iconcolors="255,90,0,255;255,90,0,255">
+	
+	<Effect minstrength="0" maxstrength="2" dialogflag="bloating"/>
 	
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="1,2" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
@@ -3033,13 +3018,13 @@
     showiconthreshold="1"
     showinhealthscannerthreshold="100"
     maxstrength="2"
-    iconcolors="195,195,60,255;195,195,60,255"
-	dialogflag="jaundice">
+    iconcolors="195,195,60,255;195,195,60,255">
 	
     <Effect minstrength="0" maxstrength="2"
       maxvitalitydecrease="0"
       minbodytint="255,255,0,0"
-      maxbodytint="255,255,0,120"/>
+      maxbodytint="255,255,0,120"
+	  dialogflag="jaundice"/>
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,0" sheetelementsize="128,128" color="255,255,0,255" origin="0,0"/>
   </Affliction>
 
@@ -3056,10 +3041,9 @@
     showiconthreshold="1"
     showinhealthscannerthreshold="100"
     maxstrength="2"
-    iconcolors="255,90,0,255;255,90,0,255"
-	dialogflag="sweating">
+    iconcolors="255,90,0,255;255,90,0,255">
 	
-    <Effect minstrength="0" maxstrength="2">
+    <Effect minstrength="0" maxstrength="2" dialogflag="sweating">
       <!--TODO: add particles-->
     </Effect>
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,2" sheetelementsize="128,128" origin="0,0"/>
@@ -3078,10 +3062,9 @@
     showiconthreshold="1"
     showinhealthscannerthreshold="100"
     maxstrength="2"
-    iconcolors="255,90,0,255;255,90,0,255"
-	dialogflag="palpitations">
+    iconcolors="255,90,0,255;255,90,0,255">
 	
-    <Effect minstrength="0" maxstrength="2">
+    <Effect minstrength="0" maxstrength="2" dialogflag="palpitations">
       <!--TODO: add sound-->
     </Effect> <!-- TODO: add client sided sound player -->
     <icon texture="%ModDir%/Images/AfflictionIcons2.png" sheetindex="2,0" sheetelementsize="128,128" origin="0,0"/>
@@ -3116,8 +3099,9 @@
     showiconthreshold="1"
     showinhealthscannerthreshold="100"
     maxstrength="2"
-    iconcolors="255,90,0,255;255,90,0,255"
-    dialogflag="inflammation">
+    iconcolors="255,90,0,255;255,90,0,255">
+	
+	<Effect minstrength="0" maxstrength="2" dialogflag="inflammation"/>
 	
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
@@ -3134,8 +3118,7 @@
     limbspecific="true"
     showiconthreshold="0.25"
     showinhealthscannerthreshold="100"
-    maxstrength="2"
-	dialogflag="spasms">
+    maxstrength="2">
 	
     <PeriodicEffect mininterval="0.5" maxinterval="1.5">
       <StatusEffect target="limb" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
@@ -3145,6 +3128,8 @@
       </StatusEffect>
     </PeriodicEffect>
 
+	<Effect minstrength="0" maxstrength="2" dialogflag="spasms"/>
+	
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="7,2" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
 
@@ -3162,8 +3147,9 @@
     showiconthreshold="1"
     showinhealthscannerthreshold="100"
     maxstrength="2"
-    iconcolors="255,90,0,255;255,90,0,255"
-	dialogflag="craving">
+    iconcolors="255,90,0,255;255,90,0,255">
+	
+	<Effect minstrength="0" maxstrength="2" dialogflag="craving"/>
 	
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="384,768,128,128" color="195,180,60,255" origin="0,0"/>
   </Affliction>
@@ -3261,8 +3247,10 @@ thats what the vomiting symptom is for -->
     limbspecific="true"
     maxstrength="100"
     showinhealthscannerthreshold="700"
-    showiconthreshold="0"
-	dialogflag="1stburn">
+    showiconthreshold="0">
+	
+	<Effect minstrength="75" maxstrength="100" dialogflag="1stburn"/>
+	
     <icon texture="%ModDir%/Images/AfflictionIcons2.png" sheetindex="0,1" sheetelementsize="128,128" color="166,91,55,255" origin="0,0"/>
   </Affliction>
 
@@ -3276,8 +3264,10 @@ thats what the vomiting symptom is for -->
     limbspecific="true"
     maxstrength="100"
     showinhealthscannerthreshold="700"
-    showiconthreshold="0"
-	dialogflag="2ndburn">
+    showiconthreshold="0">
+	
+	<Effect minstrength="0" maxstrength="100" dialogflag="2ndburn"/>
+	
     <icon texture="%ModDir%/Images/AfflictionIcons2.png" sheetindex="1,1" sheetelementsize="128,128" color="195,104,60,255" origin="0,0"/>
   </Affliction>
 
@@ -3291,8 +3281,10 @@ thats what the vomiting symptom is for -->
     limbspecific="true"
     maxstrength="100"
     showinhealthscannerthreshold="700"
-    showiconthreshold="0"
-	dialogflag="3rdburn">
+    showiconthreshold="0">
+	
+	<Effect minstrength="0" maxstrength="100" dialogflag="3rdburn"/>
+	
     <icon texture="%ModDir%/Images/AfflictionIcons2.png" sheetindex="2,1" sheetelementsize="128,128" color="235,86,14,255" origin="0,0"/>
   </Affliction>
 
@@ -3480,10 +3472,9 @@ thats what the vomiting symptom is for -->
     maxstrength="10"
     showinhealthscannerthreshold="1000"
     showiconthreshold="0.5"
-    iconcolors="255,90,0,255;255,90,0,255"
-	dialogflag="chestpain">
+    iconcolors="255,90,0,255;255,90,0,255">
     <Effect minstrength="0" maxstrength="1"/>
-    <Effect minstrength="1" maxstrength="10"/>
+    <Effect minstrength="1" maxstrength="10" dialogflag="chestpain"/>
 
     <PeriodicEffect mininterval="4" maxinterval="4">
       <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
@@ -3505,10 +3496,9 @@ thats what the vomiting symptom is for -->
     maxstrength="10"
     showinhealthscannerthreshold="1000"
     showiconthreshold="0.5"
-    iconcolors="255,90,0,255;255,90,0,255"
-	dialogflag="abdominalpain">
+    iconcolors="255,90,0,255;255,90,0,255">
     <Effect minstrength="0" maxstrength="1"/>
-    <Effect minstrength="1" maxstrength="10"/>
+    <Effect minstrength="1" maxstrength="10" dialogflag="abdominalpain"/>
 
     <PeriodicEffect mininterval="4" maxinterval="4">
       <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
@@ -3702,8 +3692,7 @@ thats what the vomiting symptom is for -->
     showinhealthscannerthreshold="5"
     showiconthreshold="5"
     maxstrength="100"
-    iconcolors="200,0,0,255;200,0,0,255"
-	dialogflag="traumaticshock">
+    iconcolors="200,0,0,255;200,0,0,255">
 	
     <Effect minstrength="0" maxstrength="5">
       <StatusEffect target="Character">
@@ -3711,6 +3700,9 @@ thats what the vomiting symptom is for -->
         <ReduceAffliction identifier="traumaticshock" amount="999"/>
       </StatusEffect>
     </Effect>
+	
+	<Effect minstrength="30" maxstrength="100" dialogflag="traumaticshock"/>
+	
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,7" sheetelementsize="128,128" origin="0,0"/>
   </Affliction>
 
@@ -3914,8 +3906,9 @@ thats what the vomiting symptom is for -->
       showiconthreshold="500"
       showinhealthscannerthreshold="5"
       karmachangeonapplied="-0.2"
-      maxstrength="200"
-	  dialogflag="oxygenlow">
+      maxstrength="200">
+		
+	  <Effect minstrength="80" maxstrength="200" dialogflag="oxygenlow"/>
 		
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="512,640,128,128" color="68,157,198,255" origin="0,0"/>
     </OxygenLow>
@@ -3933,15 +3926,15 @@ thats what the vomiting symptom is for -->
       showiconthreshold="10000"
       showinhealthscannerthreshold="5"
       maxstrength="200"
-      affectmachines="false"
-      dialogflag="bloodloss">
+      affectmachines="false">
 		
       <PeriodicEffect mininterval="4" maxinterval="4">
         <StatusEffect target="Character" disabledeltatime="true" stackable="false" checkconditionalalways="false">
           <ReduceAffliction identifier="bloodloss" amount="0.4"/>
         </StatusEffect>
       </PeriodicEffect>
-
+	  <Effect minstrength="30" maxstrength="200" dialogflag="bloodloss"/>
+	  
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,768,128,128" color="139,60,42,255" origin="0,0"/>
     </Bloodloss>
   <!-- Vanilla affliction override end -->
@@ -5075,14 +5068,14 @@ thats what the vomiting symptom is for -->
       maxstrength="10"
       showinhealthscannerthreshold="0.1"
       showiconthreshold="10000"
-      healcostmultiplier="2.5"
-	  dialogflag="concussion">
+      healcostmultiplier="2.5">
       <Effect minstrength="0" maxstrength="10"
         minscreendistort="0.02"
         maxscreendistort="0.1"
         minscreenblur="0.1"
         maxscreenblur="2.0"
-        screeneffectfluctuationfrequency="0.05">
+        screeneffectfluctuationfrequency="0.05"
+		dialogflag="concussion">
         <StatusEffect target="Character">
           <TriggerAnimation Type="Walk" filename="DrunkenWalk" priority="6" ExpectedSpecies="Human" />
           <TriggerAnimation Type="Run" filename="DrunkenRun" priority="6" ExpectedSpecies="Human" />
