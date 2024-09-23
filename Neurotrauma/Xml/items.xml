@@ -32,7 +32,7 @@
     <SuitableTreatment identifier="cardiacarrest" suitability="10"/>
 
     <!-- TODO: improvements: must aim it on the person to successfully apply the effect, remove code for application from health UI and might need use of a Lua XML hook -->
-    <MeleeWeapon slots="Any,RightHand+LeftHand" aimpos="5,0" handle1="-5,0" holdangle="10" reload="9.0">
+    <MeleeWeapon slots="RightHand+LeftHand,Any" controlpose="true" aimpos="5,0" handle1="-5,0" holdangle="10" reload="9.0">
       <RequiredItems identifier="mobilebattery" type="Contained" msg="ItemMsgBatteryCellRequired"/>
 
       <StatusEffect type="OnUse" target="This" Condition="-100"/>
@@ -40,7 +40,7 @@
                     stackable="false"/>
 
     </MeleeWeapon>
-    <!--<Pickable msg="ItemMsgPickUpSelect"/>-->
+    <Pickable msg="ItemMsgPickUpSelect"/>
 
     <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
         <Containable items="mobilebattery"/>
@@ -72,7 +72,7 @@
     <SuitableTreatment identifier="cardiacarrest" suitability="15"/>
 
     <!-- TODO: improvements: must aim it on the person to successfully apply the effect, remove code for application from health UI and might need use of a Lua XML hook -->
-    <MeleeWeapon slots="Any,RightHand+LeftHand" aimpos="5,0" handle1="-5,0" holdangle="10" reload="9.0">
+    <MeleeWeapon slots="RightHand+LeftHand,Any" controlpose="true" aimpos="5,0" handle1="-5,0" holdangle="10" reload="9.0">
       <RequiredItems identifier="mobilebattery" type="Contained" msg="ItemMsgBatteryCellRequired"/>
 
       <StatusEffect type="OnUse" target="This" Condition="-100"/>
@@ -80,8 +80,7 @@
                     stackable="false"/>
 
     </MeleeWeapon>
-    <!--<Pickable msg="ItemMsgPickUpSelect"/>-->
-
+    <Pickable msg="ItemMsgPickUpSelect"/>
     <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
         <Containable items="mobilebattery"/>
     </ItemContainer>
@@ -109,8 +108,7 @@
         <Body width="90" height="80" density="20"/>
         <SuitableTreatment identifier="oxygenlow" suitability="50"/>
 
-        <!-- TODO: improvements: must aim it on the person to successfully apply the effect, remove code for application from health UI and might need use of a Lua XML hook-->
-        <MeleeWeapon slots="Any,RightHand+LeftHand" aimpos="5,0" handle1="-5,0" holdangle="10" reload="1.0">
+        <MeleeWeapon slots="RightHand+LeftHand,Any" controlpose="true" aimpos="5,0" handle1="-5,0" holdangle="10" reload="1.0">
           <RequiredItems identifier="weldingtoolfuel,oxygensource,paint" type="Contained" msg="ItemMsgOxygenTankRequired"/>
           <StatusEffect type="OnUse" target="UseTarget">
               <Sound file="%ModDir%/Sound/pump.ogg" range="500"/>
@@ -155,7 +153,7 @@
               <RequiredItem items="paint" type="Contained"/>
           </StatusEffect>
         </MeleeWeapon>
-        <!--<Pickable msg="ItemMsgPickUpSelect"/>-->
+        <Pickable msg="ItemMsgPickUpSelect"/>
         <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="tank">
             <Containable items="weldingtoolfuel,oxygensource,paint"/>
         </ItemContainer>
@@ -2040,6 +2038,7 @@
       </StatusEffect>
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bloodloss,hypoxemia,cerebralhypoxia,organdamage,gangrene,sepsis,psychosis" damagemultiplier="0.0" damagesound="LimbArmor" />
     </Wearable>
+    <Holdable canBeCombined="true" slots="Any" handle1="0,0" msg="ItemMsgPickUpSelect" />
     <aitarget maxsightrange="50" />
   </Item>
 
@@ -2087,8 +2086,9 @@
                 <Sound file="%ModDir%/Sound/severed.ogg" range="500"/>
             </StatusEffect>
           <!-- making the limb go kaputt if left outside of refrigeration -->
-          <StatusEffect type="Always" target="This" condition="-0.2">
+          <StatusEffect type="Always" target="This" condition="-0.2" conditionalComparison="And">
             <Conditional hastag="neq refrigerated" targetcontainer="true" />
+			<Conditional hastag="neq medicalfabricator" Locked="neq true" targetitemcomponent="ItemContainer" targetcontainer="true" />
           </StatusEffect>
           <StatusEffect type="OnContained" target="This" condition="0.1" comparison="and">
             <Conditional condition="gte 95" />
@@ -2119,8 +2119,9 @@
                 <Sound file="%ModDir%/Sound/severed.ogg" range="500"/>
             </StatusEffect>
           <!-- making the limb go kaputt if left outside of refrigeration -->
-          <StatusEffect type="Always" target="This" condition="-0.2">
+          <StatusEffect type="Always" target="This" condition="-0.2" conditionalComparison="And">
             <Conditional hastag="neq refrigerated" targetcontainer="true" />
+			<Conditional hastag="neq medicalfabricator" Locked="neq true" targetitemcomponent="ItemContainer" targetcontainer="true" />
           </StatusEffect>
           <StatusEffect type="OnContained" target="This" condition="0.1" comparison="and">
             <Conditional condition="gte 95" />
@@ -2151,8 +2152,9 @@
                 <Sound file="%ModDir%/Sound/severed.ogg" range="500"/>
             </StatusEffect>
           <!-- making the limb go kaputt if left outside of refrigeration -->
-          <StatusEffect type="Always" target="This" condition="-0.2">
+          <StatusEffect type="Always" target="This" condition="-0.2" conditionalComparison="And">
             <Conditional hastag="neq refrigerated" targetcontainer="true" />
+			<Conditional hastag="neq medicalfabricator" Locked="neq true" targetitemcomponent="ItemContainer" targetcontainer="true" />
           </StatusEffect>
           <StatusEffect type="OnContained" target="This" condition="0.1" comparison="and">
             <Conditional condition="gte 95" />
@@ -2183,8 +2185,9 @@
                 <Sound file="%ModDir%/Sound/severed.ogg" range="500"/>
             </StatusEffect>
           <!-- making the limb go kaputt if left outside of refrigeration -->
-          <StatusEffect type="Always" target="This" condition="-0.2">
+          <StatusEffect type="Always" target="This" condition="-0.2" conditionalComparison="And">
             <Conditional hastag="neq refrigerated" targetcontainer="true" />
+			<Conditional hastag="neq medicalfabricator" Locked="neq true" targetitemcomponent="ItemContainer" targetcontainer="true" />
           </StatusEffect>
           <StatusEffect type="OnContained" target="This" condition="0.1" comparison="and">
             <Conditional condition="gte 95" />
@@ -2281,8 +2284,9 @@
         <Remove />
       </StatusEffect>
       <!-- making the organ go kaputt if left outside of refrigeration -->
-      <StatusEffect type="Always" target="This" condition="-0.5">
+      <StatusEffect type="Always" target="This" condition="-0.5" conditionalComparison="And">
         <Conditional hastag="neq refrigerated" targetcontainer="true" />
+		<Conditional hastag="neq medicalfabricator" Locked="neq true" targetitemcomponent="ItemContainer" targetcontainer="true" />
       </StatusEffect>
       <StatusEffect type="OnContained" target="This" condition="0.1" comparison="and">
         <Conditional condition="gte 90" />
@@ -2323,8 +2327,9 @@
         <Remove />
       </StatusEffect>
       <!-- making the organ go kaputt if left outside of refrigeration -->
-      <StatusEffect type="Always" target="This" condition="-0.5">
+      <StatusEffect type="Always" target="This" condition="-0.5" conditionalComparison="And">
         <Conditional hastag="neq refrigerated" targetcontainer="true" />
+		<Conditional hastag="neq medicalfabricator" Locked="neq true" targetitemcomponent="ItemContainer" targetcontainer="true" />
       </StatusEffect>
       <StatusEffect type="OnContained" target="This" condition="0.1" comparison="and">
         <Conditional condition="gte 90" />
@@ -2365,8 +2370,9 @@
         <Remove />
       </StatusEffect>
       <!-- making the organ go kaputt if left outside of refrigeration -->
-      <StatusEffect type="Always" target="This" condition="-0.5">
+      <StatusEffect type="Always" target="This" condition="-0.5" conditionalComparison="And">
         <Conditional hastag="neq refrigerated" targetcontainer="true" />
+		<Conditional hastag="neq medicalfabricator" Locked="neq true" targetitemcomponent="ItemContainer" targetcontainer="true" />
       </StatusEffect>
       <StatusEffect type="OnContained" target="This" condition="0.1" comparison="and">
         <Conditional condition="gte 90" />
@@ -2407,8 +2413,9 @@
         <Remove />
       </StatusEffect>
       <!-- making the organ go kaputt if left outside of refrigeration -->
-      <StatusEffect type="Always" target="This" condition="-0.5">
+      <StatusEffect type="Always" target="This" condition="-0.5" conditionalComparison="And">
         <Conditional hastag="neq refrigerated" targetcontainer="true" />
+		<Conditional hastag="neq medicalfabricator" Locked="neq true" targetitemcomponent="ItemContainer" targetcontainer="true" />
       </StatusEffect>
       <StatusEffect type="OnContained" target="This" condition="0.1" comparison="and">
         <Conditional condition="gte 90" />
@@ -2450,9 +2457,10 @@
         <Remove />
       </StatusEffect>
       <!-- making the organ go kaputt if left outside of refrigeration -->
-      <StatusEffect type="Always" target="This" condition="-2" comparison="and">
+      <StatusEffect type="Always" target="This" condition="-2" comparison="and" conditionalComparison="And">
         <Conditional hastag="neq refrigerated" targetcontainer="true" />
         <Conditional hastag="neq braincontainer" targetcontainer="true" />
+		<Conditional hastag="neq medicalfabricator" Locked="neq true" targetitemcomponent="ItemContainer" targetcontainer="true" />
       </StatusEffect>
       <StatusEffect type="OnContained" target="This" condition="-0.2" comparison="and">
         <Conditional hastag="refrigerated" targetcontainer="true" />
