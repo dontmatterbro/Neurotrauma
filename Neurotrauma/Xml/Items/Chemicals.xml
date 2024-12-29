@@ -425,4 +425,55 @@
 
         <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="false" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
     </Item>
+	
+	
+<!-- temporary test item for surgery table -->
+	  <Item name="morphinetank" identifier="hydroxtank" category="Diving,Equipment" health="200" maxstacksize="8" maxstacksizecharacterinventory="1" MaxStackSizeHoldableOrWearableInventory="1" Tags="smallitem,morphinetank" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" allowdroppingonswap="true">
+		<Upgrade gameversion="0.10.0.0" scale="0.5" />
+		<Price baseprice="75">
+		  <Price storeidentifier="merchantoutpost" minavailable="10"/>
+		  <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="15" />
+		  <Price storeidentifier="merchantresearch" minavailable="10"/>
+		  <Price storeidentifier="merchantmilitary" minavailable="10"/>
+		  <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="20" />
+		</Price>
+		<PreferredContainer secondary="respawncontainer" amount="8" spawnprobability="1" notcampaign="true"/>
+		<PreferredContainer primary="oxygentankcontainer" amount="3" spawnprobability="1"/>
+		<PreferredContainer primary="oxygengenerator" maxcondition="75"/>
+		<PreferredContainer primary="divingmask,plasmacutter,deepdiving" spawnprobability="1.0" mincondition="25"/>
+		<PreferredContainer secondary="divingcab" minamount="3" maxamount="5" spawnprobability="1" mincondition="25" notcampaign="true"/>
+		<PreferredContainer secondary="supplycab" amount="1" spawnprobability="0.5" mincondition="25" notcampaign="true"/>
+		<PreferredContainer secondary="outpostsupplycab" minamount="1" maxamount="3" spawnprobability="0.5"/>
+		<PreferredContainer secondary="wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.2"/>
+		<PreferredContainer secondary="wreckoxygentankcontainer" minamount="1" maxamount="3" spawnprobability="0.3"/>
+		<PreferredContainer secondary="outpostcrewcabinet" minamount="1" maxamount="3" spawnprobability="0.2"/>
+		<PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,piratestoragecab" minamount="1" maxamount="3" spawnprobability="0.1"/>
+		<Deconstruct time="10">
+		  <Item identifier="aluminium" />
+		</Deconstruct>
+		<Fabricate suitablefabricators="fabricator" displayname="OxygenTankEmpty" outcondition="0.0">
+		  <RequiredSkill identifier="mechanical" level="20" />
+		  <RequiredItem identifier="aluminium" amount="2" />
+		</Fabricate>
+		<Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="120" fabricationlimitmin="0" fabricationlimitmax="4" quality="0"/>
+		<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,0,64,64" origin="0.5,0.5" />
+		<Sprite texture="Content/Items/Tools/tools.png" sourcerect="410,71,24,66" depth="0.55" origin="0.5,0.5" />
+		<Body width="22" height="64" density="9.7" />
+		<Holdable canbecombined="true" slots="Any,RightHand,LeftHand" holdpos="30,-15" handle1="0,5" handle2="0,-5" msg="ItemMsgPickUpSelect">
+		  <StatusEffect type="OnFire" target="This" Condition="-10.0" tags="onfire" duration="1" stackable="false" />
+		  <StatusEffect type="OnBroken" target="This" delay="1" stackable="false">
+			<Conditional HasStatusTag="onfire" />
+			<sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+			<sound file="Content/Items/Weapons/ExplosionDebris1.ogg" range="2000" />
+			<Explosion range="150.0" force="3" debris="true" >
+			  <Affliction identifier="burn" strength="25" />
+			  <Affliction identifier="stun" strength="5" />
+			</Explosion>  
+		  </StatusEffect>
+		</Holdable>
+		<Quality>
+		  <QualityStat stattype="Condition" value="0.1"/>
+		</Quality>
+	  </Item>
+
 </Items>

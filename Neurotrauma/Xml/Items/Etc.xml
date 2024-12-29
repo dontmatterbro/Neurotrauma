@@ -1,44 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
-    <Item name="" identifier="operatingtable" scale="0.4" Tags="" maxstacksize="1" category="medical" description="" isshootable="true">
-        <Upgrade gameversion="0.12.0.0" noninteractable="false"/>
-        <Body width="416" height="192" density="40"/>
+    <Item 
+		name="" 
+		identifier="operatingtable" 
+		scale="0.4" 
+		Tags="" 
+		maxstacksize="1" 
+		category="medical" 
+		description="" 
+		isshootable="true">
+        
+		<Upgrade 
+			gameversion="0.12.0.0" 
+			noninteractable="false"/>
+        
+		<Body 
+			width="416" 
+			height="192" 
+			density="40"/>
 
-        <Price baseprice="200" soldbydefault="false">
-            <Price storeidentifier="merchantmedical" sold="true" multiplier="0.9" minavailable="1"/>
+        <Price 
+			baseprice="200" 
+			soldbydefault="false">
+			<Price 
+				storeidentifier="merchantmedical" 
+				sold="true" 
+				multiplier="0.9" 
+				minavailable="1"/>
         </Price>
 
-        <Deconstruct time="10">
-            <Item identifier="steel"/>
+        <Deconstruct 
+			time="10">
+			<Item identifier="steel"/>
             <Item identifier="aluminium"/>
         </Deconstruct>
 
-        <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
-            <RequiredSkill identifier="medical" level="50"/>
+        <Fabricate 
+			suitablefabricators="medicalfabricator" 
+			requiredtime="30">
+			<RequiredSkill identifier="medical" level="50"/>
             <RequiredItem identifier="fpgacircuit"/>
             <RequiredItem identifier="plastic"/>
             <RequiredItem identifier="steel"/>
             <RequiredItem identifier="aluminium"/>
         </Fabricate>
 
-        <InventoryIcon texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="96,304,416,192" origin="0.5,0.5"/>
-        <sprite texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="96,304,416,192" depth="0.75" premultiplyalpha="false" origin="0.5,0.5"/>
+        <InventoryIcon 
+			texture="Content/Map/Outposts/Art/MedBayAssets.png" 
+			sourcerect="96,304,416,192" 
+			origin="0.5,0.5"/>
+        
+		<sprite 
+			texture="Content/Map/Outposts/Art/MedBayAssets.png" 
+			sourcerect="96,304,416,192" 
+			depth="0.75" 
+			premultiplyalpha="false" 
+			origin="0.5,0.5"/>
 
-        <Holdable selectkey="Action" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetach" PickingTime="5" aimpos="85,-10" handle1="0,0" attachable="true" aimable="true">
-            <StatusEffect type="OnNotContained" target="NearbyCharacters" range="200" stackable="true">
+        <Holdable 
+			selectkey="Action" 
+			pickkey="Use" 
+			slots="RightHand+LeftHand" 
+			msg="ItemMsgDetach" 
+			PickingTime="5" 
+			aimpos="85,-10" 
+			handle1="0,0" 
+			attachable="true" 
+			aimable="true">
+            
+			<!-- Rewrite all this to integrate new upgrade mechanics -->
+			<StatusEffect 
+				type="OnNotContained" 
+				target="NearbyCharacters" 
+				range="200" 
+				stackable="true">
                 <Affliction identifier="table" amount="2"/>
                 <Affliction identifier="alv" amount="10"/>
             </StatusEffect>
-            <StatusEffect type="Always" target="NearbyCharacters" range="200" delay="1" stackable="false">
+			
+            <StatusEffect 
+				type="Always" 
+				target="NearbyCharacters" 
+				range="200" 
+				delay="1" 
+				stackable="false">
                 <LuaHook name="surgerytable.update" />
             </StatusEffect>
         </Holdable>
 
-        <LightComponent range="10.0" lightcolor="255,255,255,0" IsOn="true" castshadows="false" allowingameediting="false">
-            <sprite texture="Content/Map/Outposts/Art/MedBayAssets.png" depth="0.025" sourcerect="96,304,416,192" origin="0.5,0.5" alpha="1.0"/>
+        <LightComponent 
+			range="10.0" 
+			lightcolor="255,255,255,0" 
+			IsOn="true" 
+			castshadows="false" 
+			allowingameediting="false">
+            <sprite 
+				texture="Content/Map/Outposts/Art/MedBayAssets.png" 
+				depth="0.025" 
+				sourcerect="96,304,416,192" 
+				origin="0.5,0.5" 
+				alpha="1.0"/>
         </LightComponent>
 
-        <Controller allowingameediting="false" UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true">
+		<ItemContainer 
+			canbeselected="true" 
+			selectkey="Attack" 
+			capacity="6"
+			msg="ItemMsgStasisChamberReload"
+			maxstacksize="1" 
+			hideitems="true" 
+			hidehud="false" 
+			containedstateindicatorstyle="tank">
+			
+			<GuiFrame relativesize="0.1,0.15" anchor="BottomCenter" style="ItemUI" />
+			<Containable HasTag="morphinetank" />
+		</ItemContainer>
+
+        <Controller 
+			allowingameediting="false" 
+			UserPos="0,-300" 
+			direction="Right" 
+			hidehud="false" 
+			canbeselected="true">
             <limbposition limb="Head" position="-6,-10" allowusinglimb="true"/>
             <limbposition limb="Torso" position="104,0" allowusinglimb="true"/>
             <limbposition limb="Waist" position="244,-80" allowusinglimb="true"/>
@@ -46,17 +129,41 @@
             <limbposition limb="LeftFoot" position="380,-20" allowusinglimb="true"/>
             <limbposition limb="RightHand" position="234,-10" allowusinglimb="false"/>
             <limbposition limb="LeftHand" position="234,-10" allowusinglimb="false"/>
-            <!--
-            <StatusEffect type="Always" target="NearbyCharacters" range="100">
-                <Conditional sym_unconsciousness="gt 0.1"/>
-                <LuaHook name="surgerytable.forceon" />
-            </StatusEffect>
-            -->
+
+			<!-- give anesthesia, if tank is present -->
+			<StatusEffect
+				type="OnActive"
+				target="This,Contained,Character"
+				conditionalComparison="And"
+				DisableInteract="true" setvalue="true">
+				
+				<Conditional HasTag="morphinetank" />
+				<Conditional condition="gt 0" />
+				<Affliction identifier="analgesia" amount="5" />
+			</StatusEffect>
+			
+			<!-- morphinetank degradation -->
+			<StatusEffect
+				type="OnActive"
+				target="This,Contained"
+				Condition="-0.3"
+				interval="1"
+				disabledeltatime="true">
+				<RequiredItem HasTag="morphinetank" type="Contained" />
+			</StatusEffect>
+			
         </Controller>
 
         <!-- Controller output was made editable in v1.1.4.0, disallow it on surgery tables -->
-        <Upgrade gameversion="1.1.4.0" allowingameediting="false" />
-        <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <Upgrade 
+			gameversion="1.1.4.0" 
+			allowingameediting="false" />
+		
+        <ConnectionPanel 
+			selectkey="Action" 
+			canbeselected="true" 
+			msg="ItemMsgRewireScrewdriver" 
+			hudpriority="10">
             <GuiFrame relativesize="0.15,0.6" minsize="300,450" maxsize="380,500" anchor="Center" style="ConnectionPanel" />
             <RequiredItem items="screwdriver" type="Equipped" />
             <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" />
