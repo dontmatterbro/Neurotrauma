@@ -4,7 +4,7 @@
 		name="" 
 		identifier="operatingtable" 
 		scale="0.4" 
-		Tags="" 
+		Tags="operatingtable" 
 		maxstacksize="1" 
 		category="medical" 
 		description="" 
@@ -57,6 +57,115 @@
 			premultiplyalpha="false" 
 			origin="0.5,0.5"/>
 
+        <Controller 
+			allowingameediting="false" 
+			UserPos="0,-300" 
+			direction="Right" 
+			hidehud="false" 
+			canbeselected="true"
+			selectkey="Select">
+            <limbposition limb="Head" position="-6,-10" allowusinglimb="true"/>
+            <limbposition limb="Torso" position="104,0" allowusinglimb="true"/>
+            <limbposition limb="Waist" position="244,-80" allowusinglimb="true"/>
+            <limbposition limb="RightFoot" position="380,-20" allowusinglimb="true"/>
+            <limbposition limb="LeftFoot" position="380,-20" allowusinglimb="true"/>
+            <limbposition limb="RightHand" position="234,-10" allowusinglimb="true"/>
+            <limbposition limb="LeftHand" position="234,-10" allowusinglimb="true"/>
+
+			<!-- give anesthesia, if tank is present -->
+			<StatusEffect
+				type="OnActive"
+				target="This,Contained,Character"
+				conditionalComparison="And"
+				DisableInteract="true" setvalue="true">
+				
+				<Conditional HasTag="morphinetank" />
+				<Conditional condition="gt 0" />
+				<Affliction identifier="analgesia" amount="6" />
+			</StatusEffect>
+			
+			<!-- morphinetank degradation / doesn't work as intended with multiple items, do this from the items side
+			<StatusEffect
+				type="OnActive"
+				target="This,Contained"
+				Condition="-0.3"
+				interval="1"
+				disabledeltatime="true">
+				<Conditional HasTag="morphinetank" />
+				<RequiredItem items="morphinetank" type="Contained" />
+			</StatusEffect> -->
+			
+        </Controller>
+
+		<ItemContainer 
+			canbeselected="true" 
+			selectkey="Attack" 
+			capacity="1"
+			maxstacksize="1" 
+			hideitems="false" 
+			hidehud="false"
+			msg="itemmsgmodifytable"
+			uilabel="operatingtabellabel">
+			
+			<GuiFrame relativesize="0.2,0.2" anchor="BottomCenter" style="ItemUI" />
+			
+			<Containable items="morphinetank" />
+			
+			<SubContainer capacity="1">
+				<Containable items="revolver" />
+			</SubContainer>			
+			
+			<SubContainer capacity="1">
+				<Containable items="scannerunit" />
+			</SubContainer>
+			
+			<SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+			<SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
+			<SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+		</ItemContainer>
+
+        <!-- Controller output was made editable in v1.1.4.0, disallow it on surgery tables -->
+        <Upgrade 
+			gameversion="1.1.4.0" 
+			allowingameediting="false" />
+		
+        <ConnectionPanel 
+			selectkey="Action" 
+			canbeselected="true" 
+			msg="ItemMsgRewireScrewdriver" 
+			hudpriority="10">
+            <GuiFrame relativesize="0.15,0.6" minsize="300,450" maxsize="380,500" anchor="Center" style="ConnectionPanel" />
+            <RequiredItem items="screwdriver" type="Equipped" />
+            <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" />
+            <output name="alive_out" displayname="connection.aliveout"/>
+            <output name="conscious_out" displayname="connection.consciousout"/>
+            <output name="name_out" displayname="connection.nameout" />
+            <output name="vitality_out" displayname="connection.vitalityout" />
+            <output name="heartrate_out" displayname="connection.heartrateout" />
+            <output name="breathingrate_out" displayname="connection.breathingrateout" />
+            <output name="bloodpressure_out" displayname="connection.bloodpressureout" />
+            <output name="bloodoxygen_out" displayname="connection.bloodoxygenout" />
+            <output name="neurotrauma_out" displayname="connection.neurotraumaout" />
+            <output name="organdamage_out" displayname="connection.organdamageout" />
+            <output name="insurgery_out" displayname="connection.insurgeryout" />
+            <output name="causeofdeath_out" displayname="connection.causeofdeathout" />
+            <output name="bloodph_out" displayname="connection.bloodphout" />
+        </ConnectionPanel>
+		
+        <LightComponent 
+			range="10.0" 
+			lightcolor="255,255,255,0" 
+			IsOn="true" 
+			castshadows="false" 
+			allowingameediting="false">
+            <sprite 
+				texture="Content/Map/Outposts/Art/MedBayAssets.png" 
+				depth="0.025" 
+				sourcerect="96,304,416,192" 
+				origin="0.5,0.5" 
+				alpha="1.0"/>
+        </LightComponent>
+		
         <Holdable 
 			selectkey="Action" 
 			pickkey="Use" 
@@ -87,109 +196,6 @@
                 <LuaHook name="surgerytable.update" />
             </StatusEffect>
         </Holdable>
-
-        <LightComponent 
-			range="10.0" 
-			lightcolor="255,255,255,0" 
-			IsOn="true" 
-			castshadows="false" 
-			allowingameediting="false">
-            <sprite 
-				texture="Content/Map/Outposts/Art/MedBayAssets.png" 
-				depth="0.025" 
-				sourcerect="96,304,416,192" 
-				origin="0.5,0.5" 
-				alpha="1.0"/>
-        </LightComponent>
-
-		<ItemContainer 
-			canbeselected="true" 
-			selectkey="Attack" 
-			capacity="1"
-			maxstacksize="1" 
-			hideitems="false" 
-			hidehud="false" 
-			containedstateindicatorstyle="tank"
-			uilabel="ChargingDock">
-			
-			<GuiFrame relativesize="0.2,0.2" anchor="BottomCenter" style="ItemUI" />
-			<Containable items="morphinetank" />
-			
-			<SubContainer capacity="2">
-				<Containable items="revolver" />
-				<Containable items="aluminium"/>
-			</SubContainer>
-			
-			<SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
-			<SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
-			<SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
-		</ItemContainer>
-
-        <Controller 
-			allowingameediting="false" 
-			UserPos="0,-300" 
-			direction="Right" 
-			hidehud="false" 
-			canbeselected="true">
-            <limbposition limb="Head" position="-6,-10" allowusinglimb="true"/>
-            <limbposition limb="Torso" position="104,0" allowusinglimb="true"/>
-            <limbposition limb="Waist" position="244,-80" allowusinglimb="true"/>
-            <limbposition limb="RightFoot" position="380,-20" allowusinglimb="true"/>
-            <limbposition limb="LeftFoot" position="380,-20" allowusinglimb="true"/>
-            <limbposition limb="RightHand" position="234,-10" allowusinglimb="false"/>
-            <limbposition limb="LeftHand" position="234,-10" allowusinglimb="false"/>
-
-			<!-- give anesthesia, if tank is present -->
-			<StatusEffect
-				type="OnActive"
-				target="This,Contained,Character"
-				conditionalComparison="And"
-				DisableInteract="true" setvalue="true">
-				
-				<Conditional HasTag="morphinetank" />
-				<Conditional condition="gt 0" />
-				<Affliction identifier="analgesia" amount="6" />
-			</StatusEffect>
-			
-			<!-- morphinetank degradation -->
-			<StatusEffect
-				type="OnActive"
-				target="This,Contained"
-				Condition="-0.3"
-				interval="1"
-				disabledeltatime="true">
-				<RequiredItem items="morphinetank" type="Contained" />
-			</StatusEffect>
-			
-        </Controller>
-
-        <!-- Controller output was made editable in v1.1.4.0, disallow it on surgery tables -->
-        <Upgrade 
-			gameversion="1.1.4.0" 
-			allowingameediting="false" />
-		
-        <ConnectionPanel 
-			selectkey="Action" 
-			canbeselected="true" 
-			msg="ItemMsgRewireScrewdriver" 
-			hudpriority="10">
-            <GuiFrame relativesize="0.15,0.6" minsize="300,450" maxsize="380,500" anchor="Center" style="ConnectionPanel" />
-            <RequiredItem items="screwdriver" type="Equipped" />
-            <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" />
-            <output name="alive_out" displayname="connection.aliveout"/>
-            <output name="conscious_out" displayname="connection.consciousout"/>
-            <output name="name_out" displayname="connection.nameout" />
-            <output name="vitality_out" displayname="connection.vitalityout" />
-            <output name="heartrate_out" displayname="connection.heartrateout" />
-            <output name="breathingrate_out" displayname="connection.breathingrateout" />
-            <output name="bloodpressure_out" displayname="connection.bloodpressureout" />
-            <output name="bloodoxygen_out" displayname="connection.bloodoxygenout" />
-            <output name="neurotrauma_out" displayname="connection.neurotraumaout" />
-            <output name="organdamage_out" displayname="connection.organdamageout" />
-            <output name="insurgery_out" displayname="connection.insurgeryout" />
-            <output name="causeofdeath_out" displayname="connection.causeofdeathout" />
-            <output name="bloodph_out" displayname="connection.bloodphout" />
-        </ConnectionPanel>
     </Item>
 
     <Item name="" identifier="wheelchair" category="Equipment" tags="provocative,mediumitem" scale="0.5" fireproof="false" description="" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_heavy">
