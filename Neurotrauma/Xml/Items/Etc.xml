@@ -105,15 +105,24 @@
 		<ItemContainer 
 			canbeselected="true" 
 			selectkey="Attack" 
-			capacity="6"
-			msg="ItemMsgStasisChamberReload"
+			capacity="1"
 			maxstacksize="1" 
-			hideitems="true" 
+			hideitems="false" 
 			hidehud="false" 
-			containedstateindicatorstyle="tank">
+			containedstateindicatorstyle="tank"
+			uilabel="ChargingDock">
 			
-			<GuiFrame relativesize="0.1,0.15" anchor="BottomCenter" style="ItemUI" />
-			<Containable HasTag="morphinetank" />
+			<GuiFrame relativesize="0.2,0.2" anchor="BottomCenter" style="ItemUI" />
+			<Containable items="morphinetank" />
+			
+			<SubContainer capacity="2">
+				<Containable items="revolver" />
+				<Containable items="aluminium"/>
+			</SubContainer>
+			
+			<SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+			<SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
+			<SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
 		</ItemContainer>
 
         <Controller 
@@ -139,7 +148,7 @@
 				
 				<Conditional HasTag="morphinetank" />
 				<Conditional condition="gt 0" />
-				<Affliction identifier="analgesia" amount="5" />
+				<Affliction identifier="analgesia" amount="6" />
 			</StatusEffect>
 			
 			<!-- morphinetank degradation -->
@@ -149,7 +158,7 @@
 				Condition="-0.3"
 				interval="1"
 				disabledeltatime="true">
-				<RequiredItem HasTag="morphinetank" type="Contained" />
+				<RequiredItem items="morphinetank" type="Contained" />
 			</StatusEffect>
 			
         </Controller>
