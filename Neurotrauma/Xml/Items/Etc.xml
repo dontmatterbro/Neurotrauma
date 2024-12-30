@@ -79,20 +79,20 @@
 				conditionalComparison="And"
 				DisableInteract="true" setvalue="true">
 				
-				<Conditional HasTag="morphinetank" />
+				<Conditional HasTag="analgesictank" />
 				<Conditional condition="gt 0" />
 				<Affliction identifier="analgesia" amount="6" />
 			</StatusEffect>
 			
-			<!-- morphinetank degradation / doesn't work as intended with multiple items, do this from the items side
+			<!-- analgesictank degradation / doesn't work as intended with multiple items, do this from the items side
 			<StatusEffect
 				type="OnActive"
 				target="This,Contained"
 				Condition="-0.3"
 				interval="1"
 				disabledeltatime="true">
-				<Conditional HasTag="morphinetank" />
-				<RequiredItem items="morphinetank" type="Contained" />
+				<Conditional HasTag="analgesictank" />
+				<RequiredItem items="analgesictank" type="Contained" />
 			</StatusEffect> -->
 			
         </Controller>
@@ -109,7 +109,7 @@
 			
 			<GuiFrame relativesize="0.2,0.2" anchor="BottomCenter" style="ItemUI" />
 			
-			<Containable items="morphinetank" />
+			<Containable items="analgesictank" />
 			
 			<SubContainer capacity="1">
 				<Containable items="revolver" />
