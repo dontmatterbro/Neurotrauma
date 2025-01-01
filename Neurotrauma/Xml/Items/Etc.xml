@@ -72,28 +72,69 @@
             <limbposition limb="RightHand" position="234,-10" allowusinglimb="true"/>
             <limbposition limb="LeftHand" position="234,-10" allowusinglimb="true"/>
 
-			<!-- give anesthesia, if tank is present -->
+			<!-- give analgesia/anesthesia, if tank is present -->
 			<StatusEffect
 				type="OnActive"
 				target="This,Contained,Character"
 				conditionalComparison="And"
-				DisableInteract="true" setvalue="true">
+				disabledeltatime="true"
+				interval="1">
 				
 				<Conditional HasTag="analgesictank" />
 				<Conditional condition="gt 0" />
-				<Affliction identifier="analgesia" amount="6" />
-			</StatusEffect>
-			
-			<!-- analgesictank degradation / doesn't work as intended with multiple items, do this from the items side
+				<Conditional analgesia="lte 11" />
+				<Affliction identifier="analgesia" amount="3" />
+			</StatusEffect>			
 			<StatusEffect
 				type="OnActive"
-				target="This,Contained"
+				target="This,Contained,Character"
+				conditionalComparison="And"
+				disabledeltatime="true"
+				interval="1">
+				
+				<Conditional HasTag="anesthetictank" />
+				<Conditional condition="gt 0" />
+				<Conditional anesthesia="lte 6" />
+				<Affliction identifier="anesthesia" amount="5" />
+			</StatusEffect>			
+			
+			<!-- Do dialysis if dialyzer is present -->
+			<StatusEffect
+				type="OnActive"
+				target="This,Contained,Character"
+				conditionalComparison="And"
+				disabledeltatime="true"
+				interval="1">
+				
+				<Conditional HasTag="dialyzer" />
+				<Conditional condition="gt 0" />
+				<Conditional alkalosis="gt 0" />
+				<ReduceAffliction identifier="alkalosis" amount="1" />
+			</StatusEffect>			
+			<StatusEffect
+				type="OnActive"
+				target="This,Contained,Character"
+				conditionalComparison="And"
+				disabledeltatime="true"
+				interval="1">
+				
+				<Conditional HasTag="dialyzer" />
+				<Conditional condition="gt 0" />
+				<Conditional acidosis="gt 0" />
+				<ReduceAffliction identifier="acidosis" amount="1" />
+			</StatusEffect>
+			
+			<!-- Item degradation (do this with tags) -->
+			<StatusEffect
+				type="OnActive"
+				target="Contained"
 				Condition="-0.3"
+				conditionalComparison="And"
 				interval="1"
 				disabledeltatime="true">
 				<Conditional HasTag="analgesictank" />
 				<RequiredItem items="analgesictank" type="Contained" />
-			</StatusEffect> -->
+			</StatusEffect> 
 			
         </Controller>
 
@@ -109,19 +150,14 @@
 			
 			<GuiFrame relativesize="0.2,0.2" anchor="BottomCenter" style="ItemUI" />
 			
-			<Containable items="analgesictank" />
+			<Containable items="analgesictank,anesthetictank" />
 			
 			<SubContainer capacity="1">
-				<Containable items="revolver" />
-			</SubContainer>			
-			
-			<SubContainer capacity="1">
-				<Containable items="scannerunit" />
+				<Containable items="dialyzer" />
 			</SubContainer>
 			
 			<SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
-			<SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
 		</ItemContainer>
 
         <!-- Controller output was made editable in v1.1.4.0, disallow it on surgery tables -->

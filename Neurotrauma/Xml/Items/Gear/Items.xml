@@ -41,19 +41,31 @@
                 <ReduceAffliction identifier="oxygenlow" amount="90" />
                 <ReduceAffliction identifier="respiratoryarrest" amount="100" />
             </StatusEffect>
-			<!-- Analgesic/Anesthetic Tank -->
+			<!-- Analgesic Tank -->
             <StatusEffect type="OnUse" target="Contained,UseTarget" Condition="-25" comparison="and">
+                <RequiredItem items="analgesictank,anesthetictank" type="Contained"/>
+                <Conditional IsDead="false"/>
+            </StatusEffect>
+            <StatusEffect type="OnUse" target="Contained,UseTarget" duration="10" comparison="and">
                 <RequiredItem items="analgesictank" type="Contained"/>
                 <Conditional IsDead="false"/>
-                <Affliction identifier="analgesia" amount="56"/>
-				<Affliction identifier="opiateoverdose" amount="20"/>
-                <Affliction identifier="opiateaddiction" amount="20"/>
-                <ReduceAffliction identifier="opiatewithdrawal" amount="75"/>
-            </StatusEffect>
-            <StatusEffect type="OnUse" target="Contained,UseTarget" Condition="-25" comparison="and">
+                <Affliction identifier="analgesia" amount="5.6"/>
+                <Affliction identifier="opiateaddiction" amount="4"/>
+                <Affliction identifier="opiateoverdose" amount="3"/>
+                <ReduceAffliction identifier="opiatewithdrawal" amount="7.5"/>
+            </StatusEffect>            
+			<StatusEffect type="OnUse" target="Contained,UseTarget" duration="10" comparison="and">
+                <RequiredItem items="analgesictank" type="Contained"/>
+                <Conditional IsDead="false"/>
+                <Conditional drunk="gt 30" />
+                <Affliction identifier="analgesia" amount="5"/>
+                <Affliction identifier="opiateoverdose" amount="3"/>
+            </StatusEffect>			
+			<!-- Anesthetic Tank -->
+            <StatusEffect type="OnUse" target="Contained,UseTarget" duration="11" comparison="and">
                 <RequiredItem items="anesthetictank" type="Contained"/>
                 <Conditional IsDead="false"/>
-                <Affliction identifier="anesthesia" amount="20"/>
+                <Affliction identifier="anesthesia" amount="1.5"/>
             </StatusEffect>
             <!-- We do a little trolling  -->
             <StatusEffect type="OnUse" target="Contained,UseTarget" Condition="-5" comparison="and">
