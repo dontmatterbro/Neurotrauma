@@ -83,8 +83,8 @@ local function limbLockedInitial(c, limbtype, key)
 			)
 		)
 end
-NT.organDamageCalc = function(c, damagevalue)
-	if damagevalue >= 99 then
+NT.organDamageCalc = function(c, damagevalue, nomaxstrength)
+	if damagevalue >= 99 and not nomaxstrength ~= nil then
 		return 100
 	end
 	return damagevalue - 0.01 * c.stats.healingrate * c.stats.specificOrganDamageHealMultiplier * NT.Deltatime
@@ -390,7 +390,7 @@ NT.Afflictions = {
 			end
 			c.afflictions[i].strength = NT.organDamageCalc(
 				c,
-				c.afflictions[i].strength
+				c.afflictions.heartdamage.strength
 					+ NTC.GetMultiplier(c.character, "heartdamagegain")
 						* (c.stats.neworgandamage + HF.Clamp(c.afflictions.heartattack.strength, 0, 0.5) * NT.Deltatime)
 			)
@@ -484,9 +484,8 @@ NT.Afflictions = {
 			if c.stats.stasis then
 				return
 			end
-			c.afflictions[i].strength = c.afflictions[i].strength
-				+ c.stats.neworgandamage
-				- 0.03 * c.stats.healingrate * NT.Deltatime
+			c.afflictions[i].strength =
+				NT.organDamageCalc(c, c.afflictions.organdamage.strength + c.stats.neworgandamage, true)
 		end,
 	},
 	-- Blood
@@ -1328,6 +1327,7 @@ NT.Afflictions = {
 					and (
 						NTC.GetSymptom(c.character, i)
 						or (c.stats.lockleftleg and c.stats.lockrightleg and not c.stats.wheelchaired)
+						or c.character.IsKeyDown(InputType.Attack)
 					),
 				2
 			)
