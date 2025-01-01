@@ -94,9 +94,24 @@
 				
 				<Conditional HasTag="anesthetictank" />
 				<Conditional condition="gt 0" />
-				<Conditional anesthesia="lte 6" />
-				<Affliction identifier="anesthesia" amount="5" />
-			</StatusEffect>			
+				<Conditional anesthesia="lte 15" />
+				<Affliction identifier="anesthesia" amount="3" />
+			</StatusEffect>
+			<!-- reduce oxygen if welding fuel is present -->
+			<StatusEffect
+				type="OnActive"
+				target="This,Contained,Character"
+				conditionalComparison="And"
+				disabledeltatime="true"
+				interval="1"
+				OxygenAvailable="-100.0" 
+				Oxygen="-5.0">
+				
+				<Conditional HasTag="weldingfuel" />
+				<Conditional condition="gt 0" />
+				<Conditional DecreasedOxygenConsumption="lt 99" />
+				<Conditional NeedsAir="true" />
+			</StatusEffect>
 			
 			<!-- Do dialysis if dialyzer is present -->
 			<StatusEffect
@@ -150,7 +165,7 @@
 			
 			<GuiFrame relativesize="0.2,0.2" anchor="BottomCenter" style="ItemUI" />
 			
-			<Containable items="analgesictank,anesthetictank" />
+			<Containable items="analgesictank,anesthetictank,weldingfueltank" />
 			
 			<SubContainer capacity="1">
 				<Containable items="dialyzer" />
