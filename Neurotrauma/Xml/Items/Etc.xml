@@ -124,7 +124,8 @@
 				<Conditional HasTag="dialyzer" />
 				<Conditional condition="gt 0" />
 				<Conditional alkalosis="gt 0" />
-				<ReduceAffliction identifier="alkalosis" amount="1" />
+				<ReduceAffliction identifier="alkalosis" amount="0.8" />
+				<Affliction identifier="sepsis" amount="1" probability="0.001" />
 			</StatusEffect>		
 			<StatusEffect
 				type="OnActive"
@@ -137,7 +138,8 @@
 				<Conditional HasTag="dialyzer" />
 				<Conditional condition="gt 0" />
 				<Conditional acidosis="gt 0" />
-				<ReduceAffliction identifier="acidosis" amount="1" />
+				<ReduceAffliction identifier="acidosis" amount="0.8" />
+				<Affliction identifier="sepsis" amount="1" probability="0.001" />
 			</StatusEffect>
         </Controller>
 
