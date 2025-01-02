@@ -497,7 +497,7 @@
 		</Quality>
 	  </Item>
 	  
-	  <Item name="dialyzer" identifier="dialyzer" category="Medical" health="200" maxstacksize="32" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" Tags="smallitem,dialyzer" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" allowdroppingonswap="true">
+	  <Item name="dialyzer" identifier="dialyzer" category="Medical" health="150" maxstacksize="32" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" Tags="smallitem,dialyzer" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" allowdroppingonswap="true">
 		<Deconstruct time="10">
 		  <Item identifier="aluminium" />
 		</Deconstruct>

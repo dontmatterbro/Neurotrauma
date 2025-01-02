@@ -71,15 +71,16 @@
             <limbposition limb="LeftFoot" position="380,-20" allowusinglimb="true"/>
             <limbposition limb="RightHand" position="234,-10" allowusinglimb="true"/>
             <limbposition limb="LeftHand" position="234,-10" allowusinglimb="true"/>
-
+			
 			<!-- give analgesia/anesthesia, if tank is present -->
 			<StatusEffect
 				type="OnActive"
-				target="This,Contained,Character"
+				target="Contained,Character"
+				targettags="analgesictank,Human"
+				Condition="-0.7"
 				conditionalComparison="And"
 				disabledeltatime="true"
 				interval="1">
-				
 				<Conditional HasTag="analgesictank" />
 				<Conditional condition="gt 0" />
 				<Conditional analgesia="lte 11" />
@@ -87,36 +88,37 @@
 			</StatusEffect>			
 			<StatusEffect
 				type="OnActive"
-				target="This,Contained,Character"
+				target="Contained,Character"
+				targettags="anesthetictank,Human"
+				Condition="-0.5"
 				conditionalComparison="And"
 				disabledeltatime="true"
 				interval="1">
-				
 				<Conditional HasTag="anesthetictank" />
 				<Conditional condition="gt 0" />
-				<Conditional anesthesia="lte 15" />
-				<Affliction identifier="anesthesia" amount="3" />
+				<Conditional anesthesia="lte 25" />
+				<Affliction identifier="anesthesia" amount="1" />
 			</StatusEffect>
 			<!-- reduce oxygen if welding fuel is present -->
 			<StatusEffect
 				type="OnActive"
-				target="This,Contained,Character"
-				conditionalComparison="And"
-				disabledeltatime="true"
-				interval="1"
+				target="Contained,Character"
+				targettags="weldingfuel,Human"
+				Condition="-0.5"
 				OxygenAvailable="-100.0" 
-				Oxygen="-5.0">
-				
+				Oxygen="-15.0"
+				conditionalComparison="And">
 				<Conditional HasTag="weldingfuel" />
 				<Conditional condition="gt 0" />
-				<Conditional DecreasedOxygenConsumption="lt 99" />
 				<Conditional NeedsAir="true" />
+				<ReduceAffliction identifier="alv" amount="1000"/>
 			</StatusEffect>
-			
 			<!-- Do dialysis if dialyzer is present -->
 			<StatusEffect
 				type="OnActive"
-				target="This,Contained,Character"
+				target="Contained,Character"
+				targettags="dialyzer,Human"
+				Condition="-1"
 				conditionalComparison="And"
 				disabledeltatime="true"
 				interval="1">
@@ -125,10 +127,12 @@
 				<Conditional condition="gt 0" />
 				<Conditional alkalosis="gt 0" />
 				<ReduceAffliction identifier="alkalosis" amount="1" />
-			</StatusEffect>			
+			</StatusEffect>		
 			<StatusEffect
 				type="OnActive"
-				target="This,Contained,Character"
+				target="Contained,Character"
+				targettags="dialyzer,Human"
+				Condition="-1"
 				conditionalComparison="And"
 				disabledeltatime="true"
 				interval="1">
@@ -138,19 +142,6 @@
 				<Conditional acidosis="gt 0" />
 				<ReduceAffliction identifier="acidosis" amount="1" />
 			</StatusEffect>
-			
-			<!-- Item degradation (do this with tags) -->
-			<StatusEffect
-				type="OnActive"
-				target="Contained"
-				Condition="-0.3"
-				conditionalComparison="And"
-				interval="1"
-				disabledeltatime="true">
-				<Conditional HasTag="analgesictank" />
-				<RequiredItem items="analgesictank" type="Contained" />
-			</StatusEffect> 
-			
         </Controller>
 
 		<ItemContainer 
