@@ -71,7 +71,6 @@
             <limbposition limb="LeftFoot" position="380,-20" allowusinglimb="true"/>
             <limbposition limb="RightHand" position="234,-10" allowusinglimb="true"/>
             <limbposition limb="LeftHand" position="234,-10" allowusinglimb="true"/>
-			
 			<!-- give analgesia/anesthesia, if tank is present -->
 			<StatusEffect
 				type="OnActive"
@@ -122,7 +121,6 @@
 				conditionalComparison="And"
 				disabledeltatime="true"
 				interval="1">
-				
 				<Conditional HasTag="dialyzer" />
 				<Conditional condition="gt 0" />
 				<Conditional alkalosis="gt 0" />
@@ -136,7 +134,6 @@
 				conditionalComparison="And"
 				disabledeltatime="true"
 				interval="1">
-				
 				<Conditional HasTag="dialyzer" />
 				<Conditional condition="gt 0" />
 				<Conditional acidosis="gt 0" />
@@ -153,22 +150,22 @@
 			hidehud="false"
 			msg="itemmsgmodifytable"
 			uilabel="operatingtabellabel">
-			
 			<GuiFrame relativesize="0.2,0.2" anchor="BottomCenter" style="ItemUI" />
-			
-			<Containable items="analgesictank,anesthetictank,weldingfueltank" />
-			
+			<!-- First Slot (Tanks) -->
+			<Containable items="analgesictank,anesthetictank,weldingfuel" />
+			<!-- Second Slot (dialyzer) -->
 			<SubContainer capacity="1">
 				<Containable items="dialyzer" />
 			</SubContainer>
 			
 			<SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
+			<SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
 		</ItemContainer>
 
         <!-- Controller output was made editable in v1.1.4.0, disallow it on surgery tables -->
         <Upgrade 
-			gameversion="1.1.4.0" 
+			gameversion="2.1.4.0" 
 			allowingameediting="false" />
 		
         <ConnectionPanel 
@@ -218,8 +215,7 @@
 			handle1="0,0" 
 			attachable="true" 
 			aimable="true">
-            
-			<!-- Rewrite all this to integrate new upgrade mechanics -->
+			<!-- Artificial Ventilation and Table afflictions -->
 			<StatusEffect 
 				type="OnNotContained" 
 				target="NearbyCharacters" 
@@ -228,7 +224,7 @@
                 <Affliction identifier="table" amount="2"/>
                 <Affliction identifier="alv" amount="10"/>
             </StatusEffect>
-			
+			<!-- Output value update -->
             <StatusEffect 
 				type="Always" 
 				target="NearbyCharacters" 
